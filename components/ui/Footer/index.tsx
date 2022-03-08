@@ -1,16 +1,19 @@
 import styled from "styled-components"
 import tw from "twin.macro"
 
-import { Logo } from "./cl"
+// import { Logo } from "./cl"
 
 export const Footer: React.FC = () => {
+  /* Quamm Update */
   return (
     <Wrapper>
       <LogoWrapper>
-        Powered by <Logo width="135" height="22" className="pl-2" />
+        © 2022 AIRNESS | P4F S.R.L. | P.IVA 07053660960 | VIA ERBA, 14 - 20095 <br />
+        CUSANO MILANINO - ITALY
       </LogoWrapper>
     </Wrapper>
   )
+  /* ./Quamm Update */
 }
 
 const Wrapper = styled.div`

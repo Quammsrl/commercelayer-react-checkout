@@ -192,15 +192,23 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     orderNumber: order.number || 0,
     orderId: order.id,
     validCheckout: true,
-    logoUrl: organization.logo_url,
-    companyName: organization.name || "Test company",
+    logoUrl: process.env.LOGOURL,
+    companyName: process.env.COMPANYNAME || "Airness",
     language: order.language_code || "en",
-    primaryColor: hex2hsl(organization.primary_color as string) || BLACK_COLOR,
-    favicon: organization.favicon_url || "/favicon.png",
-    gtmId: isTest ? organization.gtm_id_test : organization.gtm_id,
-    supportEmail: organization.support_email,
-    supportPhone: organization.support_phone,
+    primaryColor: hex2hsl(process.env.PRIMARYCOLOR as string) || BLACK_COLOR,
+    favicon: process.env?.FAVICON || "/favicon.png",
+    gtmId: process.env?.GTMID,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: Organization type not updated on sdk v3
+    supportEmail: process.env?.SUPPORTEMAIL,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: Organization type not updated on sdk v3
+    supportPhone: process.env?.SUPPORTPHONE,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: Organization type not updated on sdk v3
     termsUrl: order.terms_url,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: Organization type not updated on sdk v3
     privacyUrl: order.privacy_url,
   }
 

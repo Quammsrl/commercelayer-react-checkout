@@ -24,6 +24,9 @@ import { ErrorCss } from "components/ui/form/Error"
 import { InputCss } from "components/ui/form/Input"
 import { Label } from "components/ui/form/Label"
 
+/* Quamm Update  */
+import countryMap from "./country-map"
+/* ./Quamm Update  */
 interface Props {
   type: BaseInputType
   fieldName: AddressInputName | AddressCountrySelectName | "email"
@@ -88,6 +91,27 @@ export const AddressInputGroup: React.FC<Props> = ({
     fieldName === "shipping_address_state_code" ||
     fieldName === "billing_address_state_code"
 
+  /* Quamm Update  */
+  const removeCountries = (
+    selector: string,
+    countryMap: { name: string; code: string }[]
+  ) => {
+    // Ottengo la select
+    const select = document.querySelector(selector) as HTMLSelectElement
+    // Riduco l'array di oggetti in array di codice paese ['AR', 'AD' ... ]
+    const mapArray = countryMap.reduce(
+      (acc, item) => acc.concat(item.code),
+      [] as string[]
+    )
+    // Se la option della select non ha il suo value nell'array di codici la elimino
+    Array.from(select?.options ?? []).forEach((option) => {
+      if (option.value !== "" && !mapArray.includes(option.value)) {
+        option.remove()
+      }
+    })
+  }
+  /* ./Quamm Updare  */
+
   useEffect(() => {
     setValueStatus(value || "")
   }, [value])
@@ -105,6 +129,11 @@ export const AddressInputGroup: React.FC<Props> = ({
 
   function renderInput() {
     if (isCountry) {
+      /* Quamm Update  */
+      process.nextTick(() => {
+        removeCountries(`select[data-cy="input_${fieldName}"]`, countryMap)
+      })
+      /* ./Quamm Update  */
       return (
         <>
           <StyledAddressCountrySelector
@@ -119,13 +148,13 @@ export const AddressInputGroup: React.FC<Props> = ({
             onChange={handleChange}
             value={
               shippingCountryCodeLock &&
-              fieldName === "shipping_address_country_code"
+                fieldName === "shipping_address_country_code"
                 ? shippingCountryCodeLock
                 : value
             }
             disabled={Boolean(
               shippingCountryCodeLock &&
-                fieldName === "shipping_address_country_code"
+              fieldName === "shipping_address_country_code"
             )}
           />
           <Label htmlFor={fieldName}>{label}</Label>
