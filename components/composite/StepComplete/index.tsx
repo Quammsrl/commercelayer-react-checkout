@@ -89,7 +89,10 @@ export const StepComplete: React.FC<Props> = ({
               <CheckIcon />
             </div>
             <Title>{t("stepComplete.title")}</Title>
-            <Text data-cy="complete-checkout-summary" className="text-gray-400">
+            <Text
+              data-test-id="complete-checkout-summary"
+              className="text-gray-400"
+            >
               <Trans
                 i18nKey={"stepComplete.description"}
                 values={{ orderNumber: orderNumber }}
@@ -107,7 +110,10 @@ export const StepComplete: React.FC<Props> = ({
 
             {ctx?.returnUrl && (
               <WrapperButton>
-                <Button data-cy="button-continue-to-shop" onClick={handleClick}>
+                <Button
+                  data-test-id="button-continue-to-shop"
+                  onClick={handleClick}
+                >
                   {t("stepComplete.continue")}
                 </Button>
 
@@ -132,7 +138,7 @@ export const StepComplete: React.FC<Props> = ({
               </RecapCol>
               <RecapCol>
                 <AddressContainer className="lg:!grid-cols-1 xl:!grid-cols-2">
-                  <div data-cy="billing-address-recap">
+                  <div data-test-id="billing-address-recap">
                     <RecapItemTitle>
                       {t("stepComplete.billed_to")}
                     </RecapItemTitle>
@@ -152,7 +158,7 @@ export const StepComplete: React.FC<Props> = ({
                     </RecapBox>
                   </div>
                   {ctx.isShipmentRequired && (
-                    <div data-cy="shipping-address-recap">
+                    <div data-test-id="shipping-address-recap">
                       <RecapItemTitle>
                         {t("stepComplete.ship_to")}
                       </RecapItemTitle>
@@ -175,7 +181,7 @@ export const StepComplete: React.FC<Props> = ({
                 </AddressContainer>
               </RecapCol>
 
-              <RecapCol data-cy="payment-recap">
+              <RecapCol data-test-id="payment-recap">
                 <RecapItemTitle>{t("stepComplete.payment")}</RecapItemTitle>
                 {ctx.isPaymentRequired ? (
                   <RecapBox>

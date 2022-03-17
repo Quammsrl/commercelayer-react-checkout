@@ -73,6 +73,9 @@ export const StepHeaderShipping: React.FC<HeaderProps> = ({ step }) => {
       if (shipments.length === 1 && shipments[0]?.shippingMethodName) {
         return shipments[0]?.shippingMethodName
       }
+      if (appCtx.shippingMethodName) {
+        return appCtx.shippingMethodName
+      }
       return t("stepShipping.methodSelected", { count: shipments.length })
     } else {
       return t("stepShipping.methodUnselected")
@@ -103,42 +106,32 @@ export const StepShipping: React.FC<Props> = () => {
     return null
   }
 
-  const { shipments, isShipmentRequired, refetchOrder } = appCtx
+  const { shipments, isShipmentRequired, saveShipments, selectShipment } =
+    appCtx
 
-  const [shipmentsSelected, setShipmentsSelected] = useState(shipments)
   const [canContinue, setCanContinue] = useState(false)
   const [isLocalLoader, setIsLocalLoader] = useState(false)
 
   useEffect(() => {
-    setCanContinue(
-      !shipmentsSelected?.map((s) => s.shippingMethodId).includes(undefined)
-    )
-  }, [shipmentsSelected])
-
-  useEffect(() => {
-    setShipmentsSelected(shipments)
+    if (shipments.length > 0) {
+      setCanContinue(
+        !shipments?.map((s) => s.shippingMethodId).includes(undefined)
+      )
+    }
   }, [shipments])
 
   const handleChange = (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    shippingMethod: ShippingMethodCollection | Record<string, any>,
+    shippingMethod: ShippingMethodCollection,
     shipmentId: string
   ): void => {
-    setShipmentsSelected((shipmentsSelected) =>
-      shipmentsSelected?.map((shipment) => {
-        return shipment.shipmentId === shipmentId
-          ? {
-              ...shipment,
-              shippingMethodId: shippingMethod.id,
-            }
-          : shipment
-      })
-    )
+    selectShipment(shippingMethod, shipmentId)
   }
 
   const handleSave = async () => {
     setIsLocalLoader(true)
-    await refetchOrder()
+
+    saveShipments()
+
     setIsLocalLoader(false)
     if (gtmCtx?.fireAddShippingInfo) {
       await gtmCtx.fireAddShippingInfo()
@@ -166,7 +159,7 @@ export const StepShipping: React.FC<Props> = () => {
                     </div>
                   }
                 >
-                  <ShippingWrapper>
+                  <ShippingWrapper data-test-id="shipments-container">
                     {shipments.length > 1 && (
                       <ShippingTitle>
                         <ShipmentField name="key_number">
@@ -196,15 +189,15 @@ export const StepShipping: React.FC<Props> = () => {
                     )}
                     <GridContainer className="mb-6">
                       <ShippingMethod emptyText={t("stepShipping.notAvaible")}>
-                        <ShippingSummary>
+                        <ShippingSummary data-test-id="shipping-methods-container">
                           <StyledShippingMethodRadioButton
-                            data-cy="shipping-method-button"
+                            data-test-id="shipping-method-button"
                             className="form-radio mt-0.5 md:mt-0"
                             onChange={(shippingMethod, shipmentId) =>
                               handleChange(shippingMethod, shipmentId)
                             }
                           />
-                          <ShippingMethodName data-cy="shipping-method-name">
+                          <ShippingMethodName data-test-id="shipping-method-name">
                             {(props) => {
                               const deliveryLeadTime =
                                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -229,11 +222,11 @@ export const StepShipping: React.FC<Props> = () => {
                                         >
                                           <DeliveryLeadTime
                                             type="min_days"
-                                            data-cy="delivery-lead-time-min-days"
+                                            data-test-id="delivery-lead-time-min-days"
                                           />
                                           <DeliveryLeadTime
                                             type="max_days"
-                                            data-cy="delivery-lead-time-max-days"
+                                            data-test-id="delivery-lead-time-max-days"
                                             className="mr-1"
                                           />
                                         </Trans>
@@ -241,7 +234,7 @@ export const StepShipping: React.FC<Props> = () => {
                                     )}
                                   <ShippingSummaryValue>
                                     <ShippingMethodPrice
-                                      data-cy="shipping-method-price"
+                                      data-test-id="shipping-method-price"
                                       labelFreeOver={t("general.free")}
                                     />
                                   </ShippingSummaryValue>
@@ -262,12 +255,12 @@ export const StepShipping: React.FC<Props> = () => {
                             />
                             <ShippingLineItemDescription>
                               <ShippingLineItemTitle>
-                                <LineItemName data-cy="line-item-name" />
+                                <LineItemName data-test-id="line-item-name" />
                               </ShippingLineItemTitle>
                               <ShippingLineItemQty>
                                 <LineItemQuantity
                                   readonly
-                                  data-cy="line-item-quantity"
+                                  data-test-id="line-item-quantity"
                                   max={100}
                                 >
                                   {(props) =>
@@ -284,7 +277,7 @@ export const StepShipping: React.FC<Props> = () => {
                             <StockTransfer>
                               <div
                                 className="flex flex-row"
-                                data-cy="stock-transfer"
+                                data-test-id="stock-transfer"
                               >
                                 <Trans
                                   t={t}
@@ -307,7 +300,7 @@ export const StepShipping: React.FC<Props> = () => {
                 <ButtonWrapper>
                   <Button
                     disabled={!canContinue || isLocalLoader}
-                    data-cy="save-shipments-button"
+                    data-test-id="save-shipping-button"
                     onClick={handleSave}
                   >
                     {isLocalLoader && <SpinnerIcon />}

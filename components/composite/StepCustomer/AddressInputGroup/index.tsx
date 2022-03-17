@@ -27,6 +27,7 @@ import { Label } from "components/ui/form/Label"
 /* Quamm Update  */
 import countryMap from "./country-map"
 /* ./Quamm Update  */
+
 interface Props {
   type: BaseInputType
   fieldName: AddressInputName | AddressCountrySelectName | "email"
@@ -139,7 +140,7 @@ export const AddressInputGroup: React.FC<Props> = ({
           <StyledAddressCountrySelector
             id={fieldName}
             className="form-select"
-            data-cy={`input_${fieldName}`}
+            data-test-id={`input_${fieldName}`}
             name={fieldName as AddressCountrySelectName}
             placeholder={{
               label: t(`addressForm.${fieldName}_placeholder`),
@@ -167,7 +168,7 @@ export const AddressInputGroup: React.FC<Props> = ({
             id={fieldName}
             selectClassName="form-select"
             inputClassName="form-input"
-            data-cy={`input_${fieldName}`}
+            data-test-id={`input_${fieldName}`}
             name={fieldName as AddressStateSelectName}
             value={value}
           />
@@ -179,7 +180,7 @@ export const AddressInputGroup: React.FC<Props> = ({
         <>
           <StyledAddressInput
             id={fieldName}
-            data-cy={`input_${fieldName}`}
+            data-test-id={`input_${fieldName}`}
             name={fieldName as AddressInputName}
             type={type}
             value={valueStatus}
@@ -197,7 +198,7 @@ export const AddressInputGroup: React.FC<Props> = ({
         <div className="relative h-10">{renderInput()}</div>
       </Wrapper>
       <StyledErrors
-        data-cy={`error_${fieldName}`}
+        data-test-id={`error_${fieldName}`}
         resource={resource}
         field={fieldName}
         messages={messages}

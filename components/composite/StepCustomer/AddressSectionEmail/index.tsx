@@ -13,11 +13,13 @@ import { Label } from "components/ui/form/Label"
 
 interface Props {
   readonly?: boolean
+  setCustomerEmail?: (email: string) => void
   emailAddress: string | undefined
 }
 
 export const AddressSectionEmail: React.FC<Props> = ({
   readonly,
+  setCustomerEmail,
   emailAddress,
 }) => {
   const { t } = useTranslation()
@@ -36,26 +38,34 @@ export const AddressSectionEmail: React.FC<Props> = ({
       message: t("input.mustBeValidEmail"),
     },
   ]
+  const saveEmail = (email: string) => {
+    if (setCustomerEmail) {
+      setCustomerEmail(email)
+    }
+  }
 
   return (
     <Wrapper>
       <div className="relative">
         {readonly ? (
-          <ReadOnlyEmail data-cy="current-customer-email">
+          <ReadOnlyEmail data-test-id="current-customer-email">
             {emailAddress}
           </ReadOnlyEmail>
         ) : (
           <>
             <StyledCustomInput
               className="block w-full border-gray-300 form-input shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
-              data-cy="customer_email"
+              data-test-id="customer_email"
               id="customer_email"
               errorClassName="hasError"
               saveOnBlur={true}
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              onBlur={saveEmail}
               value={emailAddress}
             />
             <StyledErrors
-              data-cy="customer_email_error"
+              data-test-id="customer_email_error"
               resource="orders"
               field="customer_email"
               messages={messages}

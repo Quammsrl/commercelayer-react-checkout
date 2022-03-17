@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import tw from "twin.macro"
 
+/* Quamm Update */
 // import { Logo } from "./cl"
+/* ./Quamm Update */
 
 export const Footer: React.FC = () => {
   /* Quamm Update */
