@@ -29,6 +29,8 @@ import { md5 } from "pure-md5"
 
 import { apiRequestHeaders } from "./utils"
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 Cypress.Commands.add("dataCy", (value) => {
   return cy.get(`[data-cy=${value}]`, { timeout: 100000 })
 })
@@ -254,6 +256,8 @@ Cypress.Commands.add("setSameAddress", (orderId, addressId, accessToken) => {
     })
 })
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 Cypress.Commands.add(
   "setDifferentAddress",
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -393,6 +397,8 @@ Cypress.Commands.add("getTokenSuperuser", () => {
     })
 })
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 Cypress.Commands.add("getDataLayer", (options) => {
   cy.wait(5000)
   return cy.window().then(({ dataLayer }: any) => {
