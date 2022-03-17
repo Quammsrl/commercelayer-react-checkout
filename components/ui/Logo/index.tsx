@@ -10,7 +10,11 @@ interface Props {
 export const Logo: React.FC<Props> = ({ logoUrl, companyName, className }) => {
   if (logoUrl) {
     /* Update Quamm */
-    return <a href="https://airness.eu/"><Image src={logoUrl} alt={companyName} className={className} /></a>
+    return (
+      <a href="https://airness.eu/">
+        <Image src={logoUrl} alt={companyName} className={className} />
+      </a>
+    )
     /* ./Update Quamm */
   }
   return <Label className={className}>{companyName}</Label>
