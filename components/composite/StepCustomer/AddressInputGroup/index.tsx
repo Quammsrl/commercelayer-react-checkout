@@ -132,7 +132,7 @@ export const AddressInputGroup: React.FC<Props> = ({
     if (isCountry) {
       /* Quamm Update  */
       process.nextTick(() => {
-        removeCountries(`select[data-cy="input_${fieldName}"]`, countryMap)
+        removeCountries(`select[data-test-id="input_${fieldName}"]`, countryMap)
       })
       /* ./Quamm Update  */
       return (
