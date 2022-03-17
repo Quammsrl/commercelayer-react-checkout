@@ -28,12 +28,14 @@ interface Props {
   isActive: boolean
   termsUrl?: string
   privacyUrl?: string
+  returnsUrl?: string
 }
 
 const StepPlaceOrder: React.FC<Props> = ({
   isActive,
   termsUrl,
   privacyUrl,
+  returnsUrl,
 }) => {
   const { t } = useTranslation()
   const { query } = useRouter()
@@ -134,7 +136,7 @@ const StepPlaceOrder: React.FC<Props> = ({
         }}
       >
         <>
-          {!!termsUrl && !!privacyUrl && (
+          {!!termsUrl && !!privacyUrl && !!returnsUrl && (
             <FlexContainer className="items-start mx-5 mt-4 mb-2.5 md:mb-5 md:pb-5 md:mx-0 md:mt-0 md:border-b lg:pl-8">
               <StyledPrivacyAndTermsCheckbox
                 id="privacy-terms"
@@ -151,6 +153,9 @@ const StepPlaceOrder: React.FC<Props> = ({
                     ),
                     privacyUrl: (
                       <a href={privacyUrl} target="_blank" rel="noreferrer" />
+                    ),
+                    returnsUrl: (
+                      <a href={returnsUrl} target="_blank" rel="noreferrer" />
                     ),
                   }}
                 />

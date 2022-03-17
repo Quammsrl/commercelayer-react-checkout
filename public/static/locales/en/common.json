@@ -7,7 +7,7 @@
         "edit": "Edit",
         "free" : "Free",
         "apply": "Apply",
-        "privacy_and_terms": "By clicking the checkbox you agree to <bold><termsUrl>terms</termsUrl></bold> and <bold><privacyUrl>privacy</privacyUrl></bold>.",
+        "privacy_and_terms": "I agree to the <bold><termsUrl>termini</termsUrl></bold> and <bold><privacyUrl>Conditions</privacyUrl></bold> and the <bold><returnsUrl>Refund and Cancellation policy</returnsUrl></bold>.",
         "checkoutTitle": "Checkout"
     },
 
@@ -117,6 +117,7 @@
         "title": "Order successfully placed!",
         "description": "Your order No: <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
         "continue": "Continue shopping",
+        "titleRedirect": "Redirecting, please wait...",
         "supportEmail": "If you have any questions about your order, you can email us at <br /><WrapperStyle><WrapperEmail>{{email}}</WrapperEmail></WrapperStyle>",
         "supportPhone": "If you have any questions about your order, you can call us at <br /><WrapperStyle><WrapperPhone>{{phone}}</WrapperPhone></WrapperStyle>",
         "fullSupport": "If you have any questions about your order, you can email us at <br /><WrapperStyle><WrapperEmail>{{email}}</WrapperEmail></WrapperStyle> or call us at <WrapperStyle><WrapperPhone>{{phone}}</WrapperPhone></WrapperStyle>",

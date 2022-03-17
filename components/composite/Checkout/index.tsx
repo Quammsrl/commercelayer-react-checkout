@@ -40,6 +40,8 @@ interface Props {
   privacyUrl?: string
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 const Checkout: React.FC<Props> = ({
   logoUrl,
   orderNumber,
@@ -50,6 +52,12 @@ const Checkout: React.FC<Props> = ({
   privacyUrl,
 }) => {
   const ctx = useContext(AppContext)
+
+  let language_code = "it"
+  if (ctx && ctx.returnUrl && ctx.returnUrl.includes("/en/"))
+    language_code = "en"
+  if (ctx && ctx.returnUrl && ctx.returnUrl.includes("/fr/"))
+    language_code = "fr"
 
   const { activeStep, lastActivableStep, setActiveStep, steps } =
     useActiveStep()
@@ -167,6 +175,7 @@ const Checkout: React.FC<Props> = ({
                       }
                       termsUrl={termsUrl}
                       privacyUrl={privacyUrl}
+                      returnsUrl={ReturnsUrls[language_code]}
                     />
                   </PaymentContainer>
                 </AccordionProvider>
@@ -187,4 +196,11 @@ const Sidebar = styled.div`
 const SummaryWrapper = styled.div`
   ${tw`flex-1`}
 `
+
+const ReturnsUrls: { [index: string]: any } = {
+  it: "https://airness.eu/it/termini-di-restituzione",
+  en: "https://airness.eu/en/return-policy",
+  fr: "https://airness.eu/fr/politique-de-retour",
+}
+
 export default Checkout
