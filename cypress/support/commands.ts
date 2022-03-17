@@ -32,6 +32,8 @@ import { apiRequestHeaders } from "./utils"
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 Cypress.Commands.add("dataCy", (value) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return cy.get(`[data-cy=${value}]`, { timeout: 100000 })
 })
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
