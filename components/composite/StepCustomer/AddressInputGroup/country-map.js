@@ -108,10 +108,6 @@ export default [
     "code": "LU"
   },
   {
-    "name": "Macedonia",
-    "code": "MK"
-  },
-  {
     "name": "Malta",
     "code": "MT"
   },
