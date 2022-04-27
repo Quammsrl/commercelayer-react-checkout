@@ -43,6 +43,8 @@ export const CustomerAddressCard: React.FC<AddressCardProps> = ({
               stateCode={address.state_code}
               countryCode={address.country_code}
               phone={address.phone}
+              business={address.business}
+              company={address.company}
               addressType={addressType}
             />
           )}
@@ -63,6 +65,8 @@ interface AddressProps {
   countryCode?: string
   phone?: string
   addressType: string
+  business?: boolean,
+  company?: string
 }
 
 export const CustomAddress = ({
@@ -76,6 +80,8 @@ export const CustomAddress = ({
   countryCode,
   phone,
   addressType,
+  business,
+  company
 }: AddressProps) => (
   <>
     <p className="font-bold text-md" data-test-id={`fullname_${addressType}`}>
@@ -90,6 +96,8 @@ export const CustomAddress = ({
       {zipCode} {city} - {stateCode} ({countryCode})
       <br />
       {phone}
+      <br />
+      {business} - {company}
     </p>
   </>
 )

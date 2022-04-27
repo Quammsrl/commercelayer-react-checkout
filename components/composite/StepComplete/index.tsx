@@ -153,6 +153,8 @@ export const StepComplete: React.FC<Props> = ({
                         stateCode={ctx.billingAddress?.state_code}
                         countryCode={ctx.billingAddress?.country_code}
                         phone={ctx.billingAddress?.phone}
+                        business={ctx.billingAddress?.business}
+                        company={ctx.billingAddress?.company}
                         addressType="billing"
                       />
                     </RecapBox>
@@ -173,6 +175,8 @@ export const StepComplete: React.FC<Props> = ({
                           stateCode={ctx.shippingAddress?.state_code}
                           countryCode={ctx.shippingAddress?.country_code}
                           phone={ctx.shippingAddress?.phone}
+                          business={ctx.shippingAddress?.business}
+                          company={ctx.shippingAddress?.company}
                           addressType="shipping"
                         />
                       </RecapBox>

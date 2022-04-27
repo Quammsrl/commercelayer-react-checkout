@@ -87,6 +87,18 @@ export const BillingAddressFormNew: React.FC<Props> = ({
         type="tel"
         value={billingAddress?.phone || ""}
       />
+      <AddressInputGroup
+        fieldName="billing_address_business"
+        resource="billing_address"
+        type="text"
+        value={billingAddress?.business || ""}
+      />
+      <AddressInputGroup
+        fieldName="billing_address_company"
+        resource="billing_address"
+        type="text"
+        value={billingAddress?.company || ""}
+      />
       {requiresBillingInfo && (
         <AddressInputGroup
           fieldName="billing_address_billing_info"
