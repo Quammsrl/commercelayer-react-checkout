@@ -235,7 +235,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     logoUrl: process.env.LOGOURL,
     companyName: process.env.COMPANYNAME || "Airness",
     language: order.language_code || "en",
-    primaryColor: hex2hsl(organization.primary_color as string) || BLACK_COLOR,
+    primaryColor: hex2hsl(process.env.PRIMARYCOLOR as string) || BLACK_COLOR,
     favicon: process.env?.FAVICON || "/favicon.png",
     gtmId: process.env?.GTMID,
     supportEmail: organization.support_email,
