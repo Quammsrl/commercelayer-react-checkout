@@ -3,6 +3,8 @@
     "general": {
         "title": "{{companyName}} - Checkout",
         "systemError": "Nous sommes désolés, une erreur s'est produite!",
+        "retry_error_code": "Problèmes de connexion",
+        "retry_error_description": "Essayez de recharger la page",
         "invalid": "Cette commande n'est pas accessible.",
         "edit": "Éditer",
         "free" : "Gratuit",
@@ -24,14 +26,20 @@
         "cantBlank" : "Ne peut pas être vide",
         "mustBeValidFormat" : "Doit être un format valide",
         "mustBeValidEmail":"Doit être un email valide",
-        "mustBeValidCouponOrGiftCard":"Ne correspond à aucune carte-cadeau ou coupon actif"
+        "mustBeValidCouponOrGiftCard":"Ne correspond à aucune carte-cadeau ou coupon actif",
+        "mustBeValidCoupon": "Il ne correspond pas à un coupon actif",
+        "mustBeValidGiftCard": "Il ne correspond pas à une carte cadeau active"
     },
 
     "orderRecap": {
         "order_summary": "Résumé de l’ordre",
         "cartContains": "Votre panier contient {{count}} article",
         "cartContains_other": "Votre panier contient {{count}} articles",
-        "couponCode": "Code de réduction",
+        "coupon_code": "Code de réduction",
+        "gift_card_code": "Code carte cadeau",
+        "gift_card_or_coupon_code": "Chèque cadeau ou code promo",
+        "only_quantity": "Quantité: {{count}}",
+        "only_quantity_other": "Quantité: {{count}}",
         "quantity": "Quantité: {{count}}",
         "quantity_other": "Quantité: {{count}}",
         "discount_amount": "Remise",
@@ -43,7 +51,8 @@
         "payment_method_amount": "Mode de paiement",
         "subtotal_amount": "Sous-total",
         "total_amount": "Total",
-        "notSet": "A calculer"
+        "notSet": "A calculer",
+        "returnToCart": "Retour au panier"
     },
 
     "stepCustomer": {
@@ -58,7 +67,10 @@
     "stepShipping": {
         "title": "Livraison",
         "shipment": "Expédition <Wrap>{{current}} de {{total}}</Wrap>",
-        "notAvaible": "Il n'y a pas de méthode d'expédition disponible",
+        "notAvailable": "Nous n'expédions pas à la destination indiquée. Veuillez sélectionner une autre adresse ou contactez-nous pour plus d'informations.",
+        "outOfStock": "Un produit de votre commande n'est plus disponible.",
+        "outOfStockWithCart": " Cliquez sur <WrapperStyle><Link>{{link}}</Link></WrapperStyle> pour modifier le panier.",
+        "outOfStockLink": "ici",
         "stockTransfer": "<0/> de <1/> les articles feront l'objet d'un transfert",
         "methodSelected": "Votre commande contient {{count}} expédition",
         "methodSelected_other": "Votre commande contient {{count}} expéditiona",

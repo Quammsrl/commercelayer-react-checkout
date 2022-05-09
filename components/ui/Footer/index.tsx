@@ -6,8 +6,8 @@ import tw from "twin.macro"
 /* ./Quamm Update */
 
 export const Footer: React.FC = () => {
-  /* Quamm Update */
-  return (
+   /* Quamm Update */
+   return (
     <Wrapper>
       <LogoWrapper>
         © 2022 AIRNESS | P4F S.R.L. | P.IVA 07053660960 | VIA ERBA, 14 - 20095{" "}

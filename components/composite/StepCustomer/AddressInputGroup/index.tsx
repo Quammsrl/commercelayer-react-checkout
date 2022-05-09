@@ -32,6 +32,7 @@ interface Props {
   type: BaseInputType
   fieldName: AddressInputName | AddressCountrySelectName | "email"
   resource: ResourceErrorType
+  required?: boolean
   value?: string
   openShippingAddress?: (props: ShippingToggleProps) => void
 }
@@ -39,6 +40,7 @@ interface Props {
 export const AddressInputGroup: React.FC<Props> = ({
   fieldName,
   resource,
+  required,
   type,
   value,
   openShippingAddress,
@@ -92,7 +94,7 @@ export const AddressInputGroup: React.FC<Props> = ({
     fieldName === "shipping_address_state_code" ||
     fieldName === "billing_address_state_code"
 
-  /* Quamm Update  */
+    /* Quamm Update  */
   const removeCountries = (
     selector: string,
     countryMap: { name: string; code: string }[]
@@ -180,6 +182,7 @@ export const AddressInputGroup: React.FC<Props> = ({
         <>
           <StyledAddressInput
             id={fieldName}
+            required={required}
             data-test-id={`input_${fieldName}`}
             name={fieldName as AddressInputName}
             type={type}
