@@ -70,6 +70,7 @@ export const CheckoutAddresses: React.FC<Props> = ({
 
   return (
     <Fragment>
+      <p className="smallRequiredFiedls">{t(`addressForm.required_fields`)}</p>
       <AddressSectionEmail
         emailAddress={emailAddress}
         setCustomerEmail={setCustomerEmail}

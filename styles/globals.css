@@ -7,6 +7,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.smallRequiredFiedls{
+  font-size: 11px;
+  color: rgba(135,136,136,var(--tw-text-opacity));
+}
+
 @font-face {
     font-family: "Druk Text";
     src: url("https://688e21defb019617825b-2e01cf6c3a455ecac738e279caeda388.ssl.cf3.rackcdn.com/DrukText-Medium.woff2")
