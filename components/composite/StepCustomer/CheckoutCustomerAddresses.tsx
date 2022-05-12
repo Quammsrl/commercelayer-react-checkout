@@ -167,6 +167,7 @@ export const CheckoutCustomerAddresses: React.FC<Props> = ({
 
   return (
     <Fragment>
+      <p className="smallRequiredFiedls">{t(`addressForm.required_fields`)}</p>
       <AddressSectionEmail readonly emailAddress={emailAddress as string} />
       <AddressesContainer shipToDifferentAddress={shipToDifferentAddress}>
         <AddressSectionTitle data-test-id="billing-address">
