@@ -60,14 +60,14 @@ export const StepComplete: React.FC<Props> = ({
 
   const ctx = useContext(AppContext)
 
-    /* Update Quamm */
-    const redirectBack = () => {
-      ctx?.returnUrl &&
-        (window.location.href = ctx?.returnUrl + "?id=" + ctx.orderId)
-    }
-  
-    process.nextTick(() => redirectBack())
-    /* ./Update Quamm */
+  /* Update Quamm */
+  const redirectBack = () => {
+    ctx?.returnUrl &&
+      (window.location.href = ctx?.returnUrl + "?id=" + ctx.orderId)
+  }
+
+  process.nextTick(() => redirectBack())
+  /* ./Update Quamm */
 
   if (!ctx) return null
 
