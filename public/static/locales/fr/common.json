@@ -38,8 +38,6 @@
         "coupon_code": "Code de réduction",
         "gift_card_code": "Code carte cadeau",
         "gift_card_or_coupon_code": "Chèque cadeau ou code promo",
-        "only_quantity": "Quantité: {{count}}",
-        "only_quantity_other": "Quantité: {{count}}",
         "quantity": "Quantité: {{count}}",
         "quantity_other": "Quantité: {{count}}",
         "discount_amount": "Remise",

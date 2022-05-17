@@ -94,7 +94,7 @@ export const AddressInputGroup: React.FC<Props> = ({
     fieldName === "shipping_address_state_code" ||
     fieldName === "billing_address_state_code"
 
-  /* Quamm Update  */
+    /* Quamm Update  */
   const removeCountries = (
     selector: string,
     countryMap: { name: string; code: string }[]

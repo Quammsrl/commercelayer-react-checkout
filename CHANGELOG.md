@@ -1,3 +1,33 @@
+## [1.7.5](https://github.com/commercelayer/commercelayer-react-checkout/compare/v1.7.4...v1.7.5) (2022-05-11)
+
+
+### Bug Fixes
+
+* full width btn on thank you page for mobile ([dfebf8a](https://github.com/commercelayer/commercelayer-react-checkout/commit/dfebf8a876fb579911a05a9efe019c95397a2fb1))
+
+## [1.7.4](https://github.com/commercelayer/commercelayer-react-checkout/compare/v1.7.3...v1.7.4) (2022-05-11)
+
+
+### Bug Fixes
+
+* solve a safari issue with disabled button in safari ([b8aa1fd](https://github.com/commercelayer/commercelayer-react-checkout/commit/b8aa1fda9e404ee1e60642b7de018c568c89336d))
+
+## [1.7.3](https://github.com/commercelayer/commercelayer-react-checkout/compare/v1.7.2...v1.7.3) (2022-05-11)
+
+
+### Bug Fixes
+
+* allow removing or adding coupon returning from an external payment gateway page (PayPal, checkout.com) ([213134c](https://github.com/commercelayer/commercelayer-react-checkout/commit/213134c4953dd28d3bd7857c191df68940403721))
+* shipping method selection for SKU with no tracking stock ([73bb1f0](https://github.com/commercelayer/commercelayer-react-checkout/commit/73bb1f0d164c62e5e2e7274f1f0806f10d41eecc))
+* use available shipping method for shipments ([4317e02](https://github.com/commercelayer/commercelayer-react-checkout/commit/4317e0233c2219b97d2c13b7b7a1a025cd712049))
+
+## [1.7.2](https://github.com/commercelayer/commercelayer-react-checkout/compare/v1.7.1...v1.7.2) (2022-05-09)
+
+
+### Bug Fixes
+
+* remove unit price in order summary ([573ec70](https://github.com/commercelayer/commercelayer-react-checkout/commit/573ec700114ff964f20b50487d507cebc57f76d0))
+
 ## [1.7.1](https://github.com/commercelayer/commercelayer-react-checkout/compare/v1.7.0...v1.7.1) (2022-05-05)
 
 
