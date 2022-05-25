@@ -7,6 +7,7 @@ import {
   LineItemType,
   LineItemQuantity,
 } from "@commercelayer/react-components"
+import LineItemMeta from "../../../quamm/LineItemMeta/index"
 import { useTranslation } from "next-i18next"
 import React from "react"
 
@@ -39,6 +40,7 @@ export const LineItemTypes: React.FC<Props> = ({ type }) => {
         />
         <LineItemDescription>
           <StyledLineItemSkuCode type={CODE_LOOKUP[type]} />
+          <LineItemMeta />
           <LineItemTitle>
             <LineItemName className="font-bold" />
             <LineItemAmount className="pl-2 text-lg font-extrabold" />
