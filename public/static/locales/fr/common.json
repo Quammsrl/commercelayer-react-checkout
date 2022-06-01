@@ -40,6 +40,7 @@
         "gift_card_or_coupon_code": "Chèque cadeau ou code promo",
         "quantity": "Quantité: {{count}}",
         "quantity_other": "Quantité: {{count}}",
+        "quantity_stock": "QUANTITY: <0/>",
         "discount_amount": "Remise",
         "adjustment_amount": "Total des ajustements",
         "giftcard_amount": "Gift card",
