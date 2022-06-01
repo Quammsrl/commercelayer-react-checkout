@@ -148,6 +148,10 @@ export default [
     "code": "RU"
   },
   {
+    "name": "San Marino",
+    "code": "SM"
+  },
+  {
     "name": "Serbia",
     "code": "RS"
   },
