@@ -14,7 +14,10 @@ export const Logo: React.FC<Props> = ({ logoUrl, companyName, className }) => {
   if (logoUrl) {
     const ctx = useContext(AppContext)
     const baseUrl = ctx?.returnUrl
-    const split = baseUrl ? baseUrl.split("checkout") : "https://airness.eu"
+    let split = baseUrl ? baseUrl.split("checkout") : "https://airness.eu"
+    if (baseUrl?.includes("custom.airness")) {
+      split = ["https://custom.airness.eu"]
+    }
     return (
       <Image
         src={logoUrl}
