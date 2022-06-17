@@ -224,6 +224,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return invalidateCheckout()
   }
 
+  /* Update Quamm */
+  const baseUrl = order.terms_url
+  const filteredGtmId = baseUrl?.includes("custom.airness")
+    ? process.env?.GTMIDCONF
+    : process.env?.GTMID
+  /* ./ Update Quamm */
+
   const appSettings: CheckoutSettings = {
     accessToken,
     endpoint: `https://${slug}.${domain}`,
@@ -237,7 +244,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     language: order.language_code || "en",
     primaryColor: hex2hsl(process.env.PRIMARYCOLOR as string) || BLACK_COLOR,
     favicon: process.env?.FAVICON || "/favicon.png",
-    gtmId: process.env?.GTMID,
+    gtmId: filteredGtmId,
     supportEmail: organization.support_email,
     supportPhone: organization.support_phone,
     termsUrl: order.terms_url,
