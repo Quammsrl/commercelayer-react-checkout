@@ -129,6 +129,7 @@
         "title": "Thank you for your order!",
         "description": "Order confirmation number: <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
         "continue": "Continue shopping",
+        "titleRedirect": "Redirecting, please wait...",
         "supportEmail": "For questions, email us at <br /><WrapperStyle><WrapperEmail>{{email}}</WrapperEmail></WrapperStyle>",
         "supportPhone": "For questions, call <br /><WrapperStyle><WrapperPhone>{{phone}}</WrapperPhone></WrapperStyle>",
         "fullSupport": "For questions, email us at <br /><WrapperStyle><WrapperEmail>{{email}}</WrapperEmail></WrapperStyle> or call <WrapperStyle><WrapperPhone>{{phone}}</WrapperPhone></WrapperStyle>",
