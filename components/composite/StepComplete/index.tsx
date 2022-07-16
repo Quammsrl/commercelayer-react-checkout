@@ -7,7 +7,8 @@ import {
 } from "@commercelayer/react-components"
 */
 import { useContext } from "react"
-import { useTranslation } from "react-i18next" // ,Trans
+import { useTranslation } from "react-i18next"
+// , Trans
 
 // import { OrderSummary } from "components/composite/OrderSummary"
 // import { PaymentContainer } from "components/composite/StepPayment/PaymentContainer"
@@ -88,7 +89,7 @@ export const StepComplete: React.FC<Props> = ({
             className="self-center pt-10 pl-4 mb-10 md:self-auto"
           />
           <Main>
-            <Text>{t("stepComplete.titleRedirect")}</Text>
+          <Text>{t("stepComplete.titleRedirect")}</Text>
           </Main>
         </Wrapper>
       </Top>
