@@ -89,7 +89,7 @@ export const StepComplete: React.FC<Props> = ({
             className="self-center pt-10 pl-4 mb-10 md:self-auto"
           />
           <Main>
-          <Text>{t("stepComplete.titleRedirect")}</Text>
+            <Text>{t("stepComplete.titleRedirect")}</Text>
           </Main>
         </Wrapper>
       </Top>
