@@ -4,9 +4,8 @@ import { useTranslation } from "react-i18next"
 export const PaymentContainer: React.FC = ({ children }) => {
   const { t } = useTranslation()
 
-  const checkoutReturnUrl = `${
-    window.location.href.split("?")[0]
-  }?paymentReturn=true`
+  const checkoutReturnUrl = `${window.location.href.split("?")[0]
+    }?paymentReturn=true`
 
   return (
     <PaymentMethodsContainer
@@ -43,11 +42,11 @@ export const PaymentContainer: React.FC = ({ children }) => {
         },
         adyenPayment: {
           styles: {
-            base: {
+            /* base: {
               fontSize: "16px",
               padding: "12px",
               fontFamily: "monospace",
-            },
+            }, */
           },
         },
         braintreePayment: {
