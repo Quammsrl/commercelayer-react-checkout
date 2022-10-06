@@ -124,6 +124,10 @@ export default [
     "code": "MC"
   },
   {
+    "name": "North Macedonia",
+    "code": "MK"
+  },
+  {
     "name": "Norway",
     "code": "NO"
   },
