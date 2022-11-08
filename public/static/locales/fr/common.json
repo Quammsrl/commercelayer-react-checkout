@@ -1,5 +1,4 @@
 {
-
     "general": {
         "title": "{{companyName}} - Checkout",
         "systemError": "Nous sommes désolés, une erreur s'est produite!",
@@ -7,12 +6,12 @@
         "retry_error_description": "Essayez de recharger la page",
         "invalid": "Cette commande n'est pas accessible.",
         "edit": "Éditer",
-        "free" : "Gratuit",
+        "free": "Gratuit",
         "apply": "Appliquer",
         "privacy_and_terms": "J'accepte les <bold><termsUrl>conditions de vente</termsUrl></bold>, le <bold><privacyUrl>politique de confidentialité</privacyUrl></bold> et le <bold><returnsUrl>politique de remboursement et d'annulation</returnsUrl></bold>.",
+        "newsletter": "J'accepte de recevoir des mises à jour via la newsletter Airness.",
         "checkoutTitle": "Checkout"
     },
-
     "error": {
         "general": "Erreur générale",
         "shipments": "Certaines expéditions manquent la méthode d'expédition",
@@ -21,16 +20,14 @@
         "payer": "Le payeur n'a pas approuvé le paiement",
         "resourceID": "L'ID de ressource demandé est introuvable"
     },
-
-    "input":{
-        "cantBlank" : "Ne peut pas être vide",
-        "mustBeValidFormat" : "Doit être un format valide",
-        "mustBeValidEmail":"Doit être un email valide",
-        "mustBeValidCouponOrGiftCard":"Ne correspond à aucune carte-cadeau ou coupon actif",
+    "input": {
+        "cantBlank": "Ne peut pas être vide",
+        "mustBeValidFormat": "Doit être un format valide",
+        "mustBeValidEmail": "Doit être un email valide",
+        "mustBeValidCouponOrGiftCard": "Ne correspond à aucune carte-cadeau ou coupon actif",
         "mustBeValidCoupon": "Il ne correspond pas à un coupon actif",
         "mustBeValidGiftCard": "Il ne correspond pas à une carte cadeau active"
     },
-
     "orderRecap": {
         "order_summary": "Résumé de l’ordre",
         "cartContains": "Votre panier contient {{count}} article",
@@ -53,7 +50,6 @@
         "notSet": "A calculer",
         "returnToCart": "Retour au panier"
     },
-
     "stepCustomer": {
         "title": "Cliente",
         "addNewAddress": "Ajouter une nouvelle adresse",
@@ -62,7 +58,6 @@
         "notSet": "Remplissez votre adresse de facturation/livraison",
         "closeForm": "Choisissez l'adresse"
     },
-
     "stepShipping": {
         "title": "Livraison",
         "shipment": "Expédition <Wrap>{{current}} de {{total}}</Wrap>",
@@ -74,11 +69,10 @@
         "methodSelected": "Votre commande contient {{count}} expédition",
         "methodSelected_other": "Votre commande contient {{count}} expéditiona",
         "methodUnselected": "Sélectionnez une méthode d'expédition",
-        "deliveryLeadTime" : "<0/> - <1/> days",
+        "deliveryLeadTime": "<0/> - <1/> days",
         "continueToPayment": "Passer au paiement",
         "notRequired": "Cette commande ne nécessite pas d'expédition"
     },
-
     "stepPayment": {
         "title": "Paiement",
         "methodUnselected": "Choisissez une méthode de paiement",
@@ -93,10 +87,9 @@
         "saveToWallet": "Enregistrez la nouvelle carte sur votre portefeuille",
         "expires": "Expire"
     },
-
-    "addressForm" : {
+    "addressForm": {
         "required_fields": "* champs obligatoires",
-        "customer_email" : "Votre adresse e-mail",
+        "customer_email": "Votre adresse e-mail",
         "billing_address_title": "Adresse de facturation",
         "billing_address_first_name": "Prénom*",
         "billing_address_last_name": "Nom*",
@@ -124,7 +117,6 @@
         "shipping_address_zip_code": "Code postal*",
         "shipping_address_phone": "Téléphone*"
     },
-
     "stepComplete": {
         "title": "Commande passée avec succès!",
         "description": "Il tuo ordine No: <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
@@ -141,5 +133,4 @@
         "email": "E-mail:",
         "free_payment": "Cette commande ne nécessite pas de paiement"
     }
-
 }

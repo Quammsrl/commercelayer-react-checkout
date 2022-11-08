@@ -24,7 +24,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "components/Quamm/NewsletterCheck/style.tsx"
   ],
   "exclude": [
     "node_modules",

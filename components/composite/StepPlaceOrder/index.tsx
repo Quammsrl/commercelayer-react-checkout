@@ -9,6 +9,8 @@ import { FlexContainer } from "components/ui/FlexContainer"
 import { Label } from "components/ui/Label"
 import { SpinnerIcon } from "components/ui/SpinnerIcon"
 
+import NewsletterCheck from 'components/Quamm/NewsletterCheck/'
+
 import { ErrorIcon } from "./ErrorIcon"
 import { messages } from "./messages"
 import {
@@ -137,6 +139,7 @@ const StepPlaceOrder: React.FC<Props> = ({
               </Label>
             </FlexContainer>
           )}
+          <NewsletterCheck />
           <PlaceOrderButtonWrapper>
             <StyledPlaceOrderButton
               data-test-id="save-payment-button"

@@ -6,12 +6,12 @@
         "retry_error_description": "Try to reload the page",
         "invalid": "This order is not accessible.",
         "edit": "Edit",
-        "free" : "Free",
+        "free": "Free",
         "apply": "Apply",
         "privacy_and_terms": "I agree to the <bold><termsUrl>Terms</termsUrl></bold> and <bold><privacyUrl>Conditions</privacyUrl></bold> and the <bold><returnsUrl>Refund and Cancellation policy</returnsUrl></bold>.",
+        "newsletter": "I agree to receive updates throw Airness newsletter.",
         "checkoutTitle": "Checkout"
     },
-
     "error": {
         "general": "General error",
         "shipments": "Some shipments are missing the shipping method",
@@ -20,8 +20,7 @@
         "payer": "Payer has not approved payment",
         "resourceID": "The requested resource ID was not found"
     },
-
-    "input":{
+    "input": {
         "cantBlank": "Can't be blank",
         "mustBeValidFormat": "Must be valid format",
         "mustBeValidEmail": "Please enter a valid email",
@@ -29,7 +28,6 @@
         "mustBeValidCoupon": "Please enter a valid coupon.",
         "mustBeValidGiftCard": "Please enter a valid gift card"
     },
-
     "orderRecap": {
         "order_summary": "Order summary",
         "cartContains": "Your shopping cart contains {{count}} item",
@@ -52,7 +50,6 @@
         "notSet": "To be calculated",
         "returnToCart": "Return to cart"
     },
-
     "stepCustomer": {
         "title": "Customer",
         "addNewAddress": "Add new address",
@@ -61,7 +58,6 @@
         "notSet": "Fill in your Billing/Shipping Address",
         "closeForm": "Choose address"
     },
-
     "stepShipping": {
         "title": "Delivery",
         "shipment": "Shipment <Wrap>{{current}} of {{total}}</Wrap>",
@@ -73,11 +69,10 @@
         "methodSelected": "Your order contains {{count}} shipment",
         "methodSelected_other": "Your order contains {{count}} shipments",
         "methodUnselected": "Select a shipping method",
-        "deliveryLeadTime" : "<0/> - <1/> days",
+        "deliveryLeadTime": "<0/> - <1/> days",
         "continueToPayment": "Continue to payment",
         "notRequired": "This order does not require shipping"
     },
-
     "stepPayment": {
         "title": "Payment",
         "methodUnselected": "Select a payment method",
@@ -92,10 +87,9 @@
         "saveToWallet": "Save new card on your wallet",
         "expires": "Expires"
     },
-
-    "addressForm" : {
+    "addressForm": {
         "required_fields": "* required fields",
-        "customer_email" : "Your email address*",
+        "customer_email": "Your email address*",
         "billing_address_title": "Billing Address",
         "billing_address_first_name": "First name*",
         "billing_address_last_name": "Last name*",
@@ -123,7 +117,6 @@
         "shipping_address_zip_code": "Zip Code*",
         "shipping_address_phone": "Phone*"
     },
-
     "stepComplete": {
         "title": "Thank you for your order!",
         "description": "Order confirmation number: <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
@@ -140,5 +133,4 @@
         "email": "E-mail:",
         "free_payment": "This order did not require a payment"
     }
-
 }
