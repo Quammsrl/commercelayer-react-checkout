@@ -5,11 +5,10 @@ import { Trans, useTranslation } from "react-i18next"
 
 import { AppContext } from "components/data/AppProvider"
 import { GTMContext } from "components/data/GTMProvider"
+import NewsletterCheck from "components/Quamm/NewsletterCheck/"
 import { FlexContainer } from "components/ui/FlexContainer"
 import { Label } from "components/ui/Label"
 import { SpinnerIcon } from "components/ui/SpinnerIcon"
-
-import NewsletterCheck from 'components/Quamm/NewsletterCheck/'
 
 import { ErrorIcon } from "./ErrorIcon"
 import { messages } from "./messages"

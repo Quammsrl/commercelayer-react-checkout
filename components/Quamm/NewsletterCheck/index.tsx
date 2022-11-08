@@ -1,21 +1,14 @@
-
-
-import { useContext, useEffect, useState } from 'react'
-
+import { useContext, useEffect, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
 
 import { FlexContainer } from "components/ui/FlexContainer"
 import { Label } from "components/ui/Label"
 
-import {
-  StyledCheckboxCheckbox,
-} from "./styled"
-
-
+import { StyledCheckboxCheckbox } from "./styled"
 
 const NewsletterCheck: React.FC = () => {
   const [checked, setChecked] = useState(false)
-  const fieldName = 'newsletter'
+  const fieldName = "newsletter"
 
   const handleChange: any = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const value = e.target?.checked
@@ -40,7 +33,7 @@ const NewsletterCheck: React.FC = () => {
           <Trans
             i18nKey="general.newsletter"
             components={{
-              bold: <strong />
+              bold: <strong />,
             }}
           />
         </Label>
