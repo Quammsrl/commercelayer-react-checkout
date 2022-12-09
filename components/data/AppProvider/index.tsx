@@ -5,6 +5,8 @@ import CommerceLayer, {
 } from "@commercelayer/sdk"
 import { changeLanguage } from "i18next"
 import { createContext, useEffect, useReducer, useRef } from "react"
+import { updateOrderMetadataIntegration } from './quamm-integrations'
+
 
 import { ActionType, reducer } from "components/data/AppProvider/reducer"
 import {
@@ -27,6 +29,8 @@ export interface AppProviderData extends FetchOrderByIdResponse {
   setAddresses: () => void
   setCouponOrGiftCard: () => Promise<void>
   saveShipments: () => void
+  setMetadata: (metadata: object) => void
+  metadata: object
   placeOrder: () => Promise<void>
   setPayment: (payment?: PaymentMethod) => void
   selectShipment: (
@@ -42,6 +46,7 @@ export interface AppStateData extends FetchOrderByIdResponse {
   order?: Order
   isLoading: boolean
   isFirstLoading: boolean
+  metadata: {}
 }
 
 const initialState: AppStateData = {
@@ -74,6 +79,7 @@ const initialState: AppStateData = {
   cartUrl: undefined,
   taxIncluded: false,
   shippingMethodName: undefined,
+  metadata: {}
 }
 
 export const AppContext = createContext<AppProviderData | null>(null)
@@ -157,6 +163,9 @@ export const AppProvider: React.FC<AppProviderProps> = ({
       state.customerAddresses
     )
 
+    // Aggiorno i metadata dell'ordine
+    updateOrderMetadataIntegration(state, { slug, domain, orderId })
+
     dispatch({
       type: ActionType.SET_ADDRESSES,
       payload: {
@@ -164,6 +173,11 @@ export const AppProvider: React.FC<AppProviderProps> = ({
         others,
       },
     })
+  }
+
+
+  const setMetadata = (metadata: object): void => {
+    state.metadata = { ...state.metadata, ...metadata }
   }
 
   const setCouponOrGiftCard = async () => {
@@ -232,6 +246,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
     }, 100)
   }
 
+
   const setPayment = async (payment?: PaymentMethod) => {
     dispatch({ type: ActionType.START_LOADING })
     const order = orderRef.current || (await fetchOrder(cl, orderId))
@@ -273,6 +288,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
         selectShipment,
         getOrder,
         saveShipments,
+        setMetadata,
         setPayment,
         setCouponOrGiftCard,
         placeOrder,

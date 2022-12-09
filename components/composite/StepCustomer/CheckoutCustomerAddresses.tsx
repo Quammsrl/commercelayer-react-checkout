@@ -248,11 +248,10 @@ export const CheckoutCustomerAddresses: React.FC<Props> = ({
               </AddressSectionTitle>
             </div>
             <div
-              className={`${
-                shipToDifferentAddress && hasCustomerAddresses
-                  ? "mb-4"
-                  : "hidden"
-              }`}
+              className={`${shipToDifferentAddress && hasCustomerAddresses
+                ? "mb-4"
+                : "hidden"
+                }`}
             >
               <Transition
                 show={!showShippingAddressForm}

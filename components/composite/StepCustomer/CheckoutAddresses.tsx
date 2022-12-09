@@ -19,6 +19,7 @@ import { AddressSectionSaveForm } from "./AddressSectionSaveForm"
 import { AddressSectionTitle } from "./AddressSectionTitle"
 import { BillingAddressFormNew } from "./BillingAddressFormNew"
 import { ShippingAddressFormNew } from "./ShippingAddressFormNew"
+import { IntegrationBillingInvoice } from "./IntegrationBillingInvoice"
 
 interface Props {
   billingAddress?: Address
@@ -87,6 +88,10 @@ export const CheckoutAddresses: React.FC<Props> = ({
               billingAddress={billingAddress}
               openShippingAddress={openShippingAddress}
             />
+
+            {/* Invoice Form */}
+            <IntegrationBillingInvoice />
+
           </div>
         </BillingAddressForm>
         {isShipmentRequired && (
