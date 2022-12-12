@@ -14,9 +14,9 @@ export const updateOrderMetadataIntegration = async (
 ): Promise<void> => {
   try {
     const url = "https://nodered.quammbase.it/integration-order"
-
+    console.log(process.env.NODE_ENV)
     const data = {
-      env: process.env.NODE_ENV === "development",
+      env: process.env.NODE_ENV === "development", // IMPORTANTE! Se non è settato in development per ambienti stagin etc FARLO trmait evariabile env
       data: {
         type: "orders",
         id: state?.order?.id,
