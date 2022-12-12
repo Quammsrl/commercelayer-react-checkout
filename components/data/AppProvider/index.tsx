@@ -5,8 +5,6 @@ import CommerceLayer, {
 } from "@commercelayer/sdk"
 import { changeLanguage } from "i18next"
 import { createContext, useEffect, useReducer, useRef } from "react"
-import { updateOrderMetadataIntegration } from './quamm-integrations'
-
 
 import { ActionType, reducer } from "components/data/AppProvider/reducer"
 import {
@@ -16,6 +14,8 @@ import {
   fetchOrder,
   FetchOrderByIdResponse,
 } from "components/data/AppProvider/utils"
+
+import { updateOrderMetadataIntegration } from "./quamm-integrations"
 
 export interface AppProviderData extends FetchOrderByIdResponse {
   isLoading: boolean
@@ -46,7 +46,7 @@ export interface AppStateData extends FetchOrderByIdResponse {
   order?: Order
   isLoading: boolean
   isFirstLoading: boolean
-  metadata: {}
+  metadata: object
 }
 
 const initialState: AppStateData = {
@@ -79,7 +79,7 @@ const initialState: AppStateData = {
   cartUrl: undefined,
   taxIncluded: false,
   shippingMethodName: undefined,
-  metadata: {}
+  metadata: {},
 }
 
 export const AppContext = createContext<AppProviderData | null>(null)
@@ -179,7 +179,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
     const merged: any = { ...state.metadata, ...metadata }
     Object.keys(merged).forEach((key: string) => {
       if (!merged[key]) delete merged[key]
-    });
+    })
     state.metadata = merged
   }
 
@@ -248,7 +248,6 @@ export const AppProvider: React.FC<AppProviderProps> = ({
       })
     }, 100)
   }
-
 
   const setPayment = async (payment?: PaymentMethod) => {
     dispatch({ type: ActionType.START_LOADING })

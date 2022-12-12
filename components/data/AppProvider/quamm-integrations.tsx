@@ -1,8 +1,6 @@
 import axios from "axios"
 
-import {
-  AppStateData,
-} from "./index"
+import { AppStateData } from "./index"
 
 export interface Context {
   slug: string
@@ -10,21 +8,23 @@ export interface Context {
   orderId: string
 }
 
-
-export const updateOrderMetadataIntegration = async (state: AppStateData, context: Context): Promise<void> => {
+export const updateOrderMetadataIntegration = async (
+  state: AppStateData,
+  context: Context
+): Promise<void> => {
   try {
-    const url = 'https://nodered.quammbase.it/integration-order'
+    const url = "https://nodered.quammbase.it/integration-order"
 
     const data = {
-      env: process.env.NODE_ENV === 'development',
+      env: process.env.NODE_ENV === "development",
       data: {
         type: "orders",
         id: state?.order?.id,
         attributes: {
-          metadata: state.metadata
-        }
+          metadata: state.metadata,
+        },
       },
-      context
+      context,
     }
 
     const res = await axios.post(url, { data })

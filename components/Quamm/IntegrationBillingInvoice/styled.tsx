@@ -1,9 +1,8 @@
-
 import styled from "styled-components"
 import tw from "twin.macro"
 
-import { InputCss } from "components/ui/form/Input"
 import { CheckCss } from "components/ui/form/CheckBox"
+import { InputCss } from "components/ui/form/Input"
 
 export const StyledInput = styled.input`
   ${InputCss}

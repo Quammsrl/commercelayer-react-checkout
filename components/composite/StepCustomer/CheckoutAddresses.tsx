@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 
 import { ShippingToggleProps } from "components/composite/StepCustomer"
+import { IntegrationBillingInvoice } from "components/Quamm/IntegrationBillingInvoice"
 import { ButtonCss, ButtonWrapper } from "components/ui/Button"
 import { SpinnerIcon } from "components/ui/SpinnerIcon"
 import { Toggle } from "components/ui/Toggle"
@@ -19,7 +20,6 @@ import { AddressSectionSaveForm } from "./AddressSectionSaveForm"
 import { AddressSectionTitle } from "./AddressSectionTitle"
 import { BillingAddressFormNew } from "./BillingAddressFormNew"
 import { ShippingAddressFormNew } from "./ShippingAddressFormNew"
-import { IntegrationBillingInvoice } from "components/Quamm/IntegrationBillingInvoice"
 
 interface Props {
   billingAddress?: Address
@@ -91,7 +91,6 @@ export const CheckoutAddresses: React.FC<Props> = ({
 
             {/* Invoice Form */}
             <IntegrationBillingInvoice />
-
           </div>
         </BillingAddressForm>
         {isShipmentRequired && (
