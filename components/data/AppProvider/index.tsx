@@ -30,7 +30,7 @@ export interface AppProviderData extends FetchOrderByIdResponse {
   setCouponOrGiftCard: () => Promise<void>
   saveShipments: () => void
   setMetadata: (metadata: object) => void
-  metadata: object
+  metadata: any
   placeOrder: () => Promise<void>
   setPayment: (payment?: PaymentMethod) => void
   selectShipment: (
@@ -175,9 +175,12 @@ export const AppProvider: React.FC<AppProviderProps> = ({
     })
   }
 
-
   const setMetadata = (metadata: object): void => {
-    state.metadata = { ...state.metadata, ...metadata }
+    const merged: any = { ...state.metadata, ...metadata }
+    Object.keys(merged).forEach((key: string) => {
+      if (!merged[key]) delete merged[key]
+    });
+    state.metadata = merged
   }
 
   const setCouponOrGiftCard = async () => {

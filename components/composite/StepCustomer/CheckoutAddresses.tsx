@@ -19,7 +19,7 @@ import { AddressSectionSaveForm } from "./AddressSectionSaveForm"
 import { AddressSectionTitle } from "./AddressSectionTitle"
 import { BillingAddressFormNew } from "./BillingAddressFormNew"
 import { ShippingAddressFormNew } from "./ShippingAddressFormNew"
-import { IntegrationBillingInvoice } from "./IntegrationBillingInvoice"
+import { IntegrationBillingInvoice } from "components/Quamm/IntegrationBillingInvoice"
 
 interface Props {
   billingAddress?: Address

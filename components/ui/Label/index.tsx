@@ -30,3 +30,4 @@ const Wrapper = styled.label`
     ${tw`text-gray-900 border-b border-gray-200 transition ease hover:text-gray-500`}
   }
 `
+export default Label
