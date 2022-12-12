@@ -1,0 +1,8 @@
+[context.production]
+  [context.production.environment]
+    NEXT_PUBLIC_ENV = 'production'
+
+[context.staging]
+  [context.staging.environment]
+    NEXT_PUBLIC_ENV = 'development'
+    
