@@ -1,0 +1,3 @@
+[context.staging]
+  [context.staging.environment]
+    NODE_ENV = 'development'
