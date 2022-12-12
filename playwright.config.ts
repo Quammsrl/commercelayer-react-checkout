@@ -52,7 +52,7 @@ const config: PlaywrightTestConfig = {
           // logger: {
           //   isEnabled: (name, severity) => true,
           //   log: (name, severity, message, args) =>
-          //     console.log(name, severity, message, args),
+          //    console.log(name, severity, message, args),
           // },
           // slowMo: 100,
           // devtools: true,
