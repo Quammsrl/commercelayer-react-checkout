@@ -102,7 +102,7 @@
         "billing_address_state_code_placeholder": "Select a province/state",
         "billing_address_zip_code": "Zip Code*",
         "billing_address_phone": "Phone*",
-        "billing_address_invoice_title": "Invoice or Receipt (optional)",
+        "billing_address_invoice_title": "Invoice (optional)",
         "billing_address_invoice_company": "Invoice",
         "billing_address_invoice_private": "Receipt",
         "billing_address_invoice_company_name": "Company name",

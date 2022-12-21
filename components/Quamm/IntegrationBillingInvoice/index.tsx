@@ -32,7 +32,7 @@ export const IntegrationBillingInvoice: React.FC = () => {
     partita_iva: metadata.partita_iva || "",
   })
 
-  const handleChangeType = (event: React.ChangeEvent<HTMLInputElement>) => {
+  /*const handleChangeType = (event: React.ChangeEvent<HTMLInputElement>) => {
     const metaValue = event.target.value
     const metaTags = {
       tipo: "",
@@ -54,7 +54,7 @@ export const IntegrationBillingInvoice: React.FC = () => {
     }
 
     setMetaState(metaTags)
-  }
+  }*/
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const metaName = event.target.name
@@ -81,98 +81,40 @@ export const IntegrationBillingInvoice: React.FC = () => {
         </StyledInfo>
       </div>
 
-      {/* Tipologia Ricevuta */}
-      <FlexContainer className="mt-4 mb-8">
-        {/* Input checkobx Fattura */}
-        <FlexContainer>
-          <StyledCheckboxCheckbox
-            type="checkbox"
-            name="tipo_fattura"
-            id="tipo_fattura"
-            className="relative form-checkbox top-0.5"
-            value={"Fattura"}
-            onChange={handleChangeType}
-            checked={invoiceData.tipo === "Fattura"}
-          ></StyledCheckboxCheckbox>
-          {/* Label */}
-          <CheckboxLabel htmlFor="tipo_fattura">
-            {t(`addressForm.billing_address_invoice_company`)}
-          </CheckboxLabel>
-        </FlexContainer>
-
-        {/* Input checkobx Ricevuta */}
-        <FlexContainer className="ml-8">
-          <StyledCheckboxCheckbox
-            type="checkbox"
-            name="tipo_ricevuta"
-            id="tipo_ricevuta"
-            className="relative form-checkbox top-0.5"
-            value={"Ricevuta"}
-            onChange={handleChangeType}
-            checked={invoiceData.tipo === "Ricevuta"}
-          ></StyledCheckboxCheckbox>
-          {/* Label */}
-          <CheckboxLabel htmlFor="tipo_ricevuta">
-            {t(`addressForm.billing_address_invoice_private`)}
-          </CheckboxLabel>
-        </FlexContainer>
-      </FlexContainer>
-
       <div className="mt-4">
         <StyledGrid>
           {/* Ragione Sociale */}
-          {invoiceData.tipo === "Fattura" && (
-            <div className="relative h-10">
-              <StyledInput
-                id={"ragione_sociale"}
-                required={true}
-                name={"ragione_sociale"}
-                type={"text"}
-                value={invoiceData.ragione_sociale}
-                onChange={handleChange}
-                className="form-input"
-              />
-              <Label htmlFor={"ragione_sociale"}>
-                {t(`addressForm.billing_address_invoice_company_name`)}
-              </Label>
-            </div>
-          )}
-          {/* Partita Iva */}
-          {invoiceData.tipo === "Fattura" && (
-            <div className="relative h-10">
-              <StyledInput
-                id={"partita_iva"}
-                required={true}
-                name={"partita_iva"}
-                type={"text"}
-                value={invoiceData.partita_iva}
-                onChange={handleChange}
-                className="form-input"
-              />
-              <Label htmlFor={"partita_iva"}>
-                {t(`addressForm.billing_address_invoice_company_vat`)}
-              </Label>
-            </div>
-          )}
-        </StyledGrid>
-
-        {/* Codice Fiscale */}
-        {invoiceData.tipo === "Ricevuta" && (
-          <div className="relative h-10 mb-8">
+          <div className="relative h-10">
             <StyledInput
-              id={"codice_fiscale"}
+              id={"ragione_sociale"}
               required={true}
-              name={"codice_fiscale"}
+              name={"ragione_sociale"}
               type={"text"}
-              value={invoiceData.codice_fiscale}
+              value={invoiceData.ragione_sociale}
               onChange={handleChange}
               className="form-input"
             />
-            <Label htmlFor={"codice_fiscale"}>
-              {t(`addressForm.billing_address_invoice_company_fiscal_code`)}
+            <Label htmlFor={"ragione_sociale"}>
+              {t(`addressForm.billing_address_invoice_company_name`)}
             </Label>
           </div>
-        )}
+          {/* Partita Iva */}
+          <div className="relative h-10">
+            <StyledInput
+              id={"partita_iva"}
+              required={true}
+              name={"partita_iva"}
+              type={"text"}
+              value={invoiceData.partita_iva}
+              onChange={handleChange}
+              className="form-input"
+            />
+            <Label htmlFor={"partita_iva"}>
+              {t(`addressForm.billing_address_invoice_company_vat`)}
+            </Label>
+          </div>
+        </StyledGrid>
+
       </div>
     </StyledWrapper>
   )

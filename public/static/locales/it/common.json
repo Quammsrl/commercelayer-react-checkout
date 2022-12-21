@@ -102,7 +102,7 @@
         "billing_address_state_code_placeholder": "Seleziona una provincia",
         "billing_address_zip_code": "CAP*",
         "billing_address_phone": "Telefono*",
-        "billing_address_invoice_title": "Fattura o Ricevuta (opzionale)",
+        "billing_address_invoice_title": "Fattura (opzionale)",
         "billing_address_invoice_company": "Fattura",
         "billing_address_invoice_private": "Ricevuta",
         "billing_address_invoice_company_name": "Ragione Sociale",
