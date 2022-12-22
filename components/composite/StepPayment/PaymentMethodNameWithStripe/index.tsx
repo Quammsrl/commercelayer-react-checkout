@@ -7,11 +7,10 @@ import { getTranslations } from "components/utils/payments"
 // to Credit Card
 export const PaymentMethodNameWithStripe: React.FC = () => {
   const { t } = useTranslation()
-
   return (
     <PaymentMethodName>
       {({ htmlFor, labelName }) => (
-        <label htmlFor={htmlFor}>{getTranslations(labelName, t)}</label>
+        <label htmlFor={htmlFor}>{getTranslations(labelName, t)}{labelName === "Stripe Payment" && (<img src="/static/images/carte-credito.svg" width="78" height="15" className="inline-block	ml-2" />)}</label>
       )}
     </PaymentMethodName>
   )
