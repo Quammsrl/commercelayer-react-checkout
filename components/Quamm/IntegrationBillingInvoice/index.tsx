@@ -2,17 +2,14 @@ import { useContext, useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 
 import { AppContext } from "components/data/AppProvider"
-import { FlexContainer } from "components/ui/FlexContainer"
 import { Label } from "components/ui/form/Label"
-import CheckboxLabel from "components/ui/Label"
 
 import {
   StyledInput,
-  StyledCheckboxCheckbox,
   StyledWrapper,
   StyledGrid,
   StyledInfo,
-  StyledFlex,
+  StyledItem
 } from "./styled"
 
 export const IntegrationBillingInvoice: React.FC = () => {
@@ -24,6 +21,7 @@ export const IntegrationBillingInvoice: React.FC = () => {
   }
 
   const { setMetadata, metadata } = appCtx
+  const [billingCountry, setBillingCountry] = useState<string | undefined>(appCtx?.billingAddress?.country_code)
 
   const [invoiceData, setInvoiceData] = useState({
     tipo: metadata.tipo || "",
@@ -32,29 +30,24 @@ export const IntegrationBillingInvoice: React.FC = () => {
     partita_iva: metadata.partita_iva || "",
   })
 
-  /*const handleChangeType = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const metaValue = event.target.value
-    const metaTags = {
-      tipo: "",
-      codice_fiscale: "",
-      ragione_sociale: "",
-      partita_iva: "",
-    }
+  // Monitoro i cambiamenti della select country
+  const countrySelect = document.querySelector('#billing_address_country_code') as HTMLInputElement
+  countrySelect?.addEventListener('change', (event: Event) => {
+    setBillingCountry(countrySelect.value)
+  })
 
-    const toggled = invoiceData.tipo !== metaValue
+  useEffect(() => {
+    if (billingCountry !== "IT") {
+      const metaTags = {
+        tipo: "",
+        codice_fiscale: "",
+        ragione_sociale: "",
+        partita_iva: "",
+      }
+      setMetaState(metaTags)
 
-    if (toggled && metaValue === "Ricevuta") {
-      metaTags.tipo = "Ricevuta"
-      metaTags.codice_fiscale = ""
-      metaTags.partita_iva = ""
     }
-    if (toggled && metaValue === "Fattura") {
-      metaTags.tipo = "Fattura"
-      metaTags.codice_fiscale = ""
-    }
-
-    setMetaState(metaTags)
-  }*/
+  }, [billingCountry])
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const metaName = event.target.name
@@ -73,49 +66,53 @@ export const IntegrationBillingInvoice: React.FC = () => {
   }, [invoiceData])
 
   return (
-    <StyledWrapper>
-      <div className="mt-4">
-        {/* Intro Sezione */}
-        <StyledInfo>
-          {t(`addressForm.billing_address_invoice_title`)}
-        </StyledInfo>
-      </div>
+    <>
+      {billingCountry && billingCountry === "IT" && <StyledWrapper>
+        <div className="mt-4">
+          {/* Intro Sezione */}
+          <StyledInfo>
+            {t(`addressForm.billing_address_invoice_title`)}
 
-      <div className="mt-4">
-        <StyledGrid>
-          {/* Ragione Sociale */}
-          <div className="relative h-10">
-            <StyledInput
-              id={"ragione_sociale"}
-              required={true}
-              name={"ragione_sociale"}
-              type={"text"}
-              value={invoiceData.ragione_sociale}
-              onChange={handleChange}
-              className="form-input"
-            />
-            <Label htmlFor={"ragione_sociale"}>
-              {t(`addressForm.billing_address_invoice_company_name`)}
-            </Label>
-          </div>
-          {/* Partita Iva */}
-          <div className="relative h-10">
-            <StyledInput
-              id={"partita_iva"}
-              required={true}
-              name={"partita_iva"}
-              type={"text"}
-              value={invoiceData.partita_iva}
-              onChange={handleChange}
-              className="form-input"
-            />
-            <Label htmlFor={"partita_iva"}>
-              {t(`addressForm.billing_address_invoice_company_vat`)}
-            </Label>
-          </div>
-        </StyledGrid>
+          </StyledInfo>
+        </div>
 
-      </div>
-    </StyledWrapper>
+        <div className="mt-4">
+          <StyledGrid>
+            {/* Ragione Sociale */}
+            <StyledItem>
+              <StyledInput
+                id={"ragione_sociale"}
+                required={true}
+                name={"ragione_sociale"}
+                type={"text"}
+                value={invoiceData.ragione_sociale}
+                onChange={handleChange}
+                className="form-input"
+              />
+              <Label htmlFor={"ragione_sociale"}>
+                {t(`addressForm.billing_address_invoice_company_name`)}
+              </Label>
+            </StyledItem>
+            {/* Partita Iva */}
+            <StyledItem>
+              <StyledInput
+                id={"partita_iva"}
+                required={true}
+                name={"partita_iva"}
+                type={"text"}
+                value={invoiceData.partita_iva}
+                onChange={handleChange}
+                className="form-input"
+              />
+              <Label htmlFor={"partita_iva"}>
+                {t(`addressForm.billing_address_invoice_company_vat`)}
+              </Label>
+            </StyledItem>
+          </StyledGrid>
+
+        </div>
+      </StyledWrapper>
+      }
+    </>
   )
 }
