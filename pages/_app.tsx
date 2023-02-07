@@ -5,7 +5,6 @@ import "components/data/i18n"
 
 function CheckoutApp(props: AppProps) {
   const { Component, pageProps } = props
-
   return <Component {...pageProps} />
 }
 

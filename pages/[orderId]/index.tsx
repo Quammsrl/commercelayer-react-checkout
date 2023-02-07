@@ -1,4 +1,6 @@
 import { NextPage } from "next"
+import { useEffect } from "react"
+
 import dynamic from "next/dynamic"
 
 import CheckoutSkeleton from "components/composite/CheckoutSkeleton"
@@ -21,6 +23,12 @@ const DynamicCheckout = dynamic(() => import("components/composite/Checkout"), {
 
 CheckoutSkeleton.displayName = "Skeleton Loader"
 const Home: NextPage = () => {
+
+  useEffect(() => {
+    localStorage.setItem('newsletter', 'false')
+
+  }, [])
+
   const { settings, retryOnError, isLoading } = useSettingsOrInvalid()
 
   if (isLoading || (!settings && !retryOnError)) return <CheckoutSkeleton />
