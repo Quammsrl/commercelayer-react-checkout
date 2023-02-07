@@ -9,7 +9,7 @@
         "free": "Free",
         "apply": "Apply",
         "privacy_and_terms": "I agree to the <bold><termsUrl>Terms</termsUrl></bold> and <bold><privacyUrl>Conditions</privacyUrl></bold> and the <bold><returnsUrl>Refund and Cancellation policy</returnsUrl></bold>.",
-        "newsletter": "I agree to receive updates throw Airness newsletter.",
+        "newsletter": "I agree to receive updates throw newsletter.",
         "checkoutTitle": "Checkout"
     },
     "error": {
