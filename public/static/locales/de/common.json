@@ -10,7 +10,8 @@
         "apply": "Anwenden",
         "privacy_and_terms": "Durch Anklicken des Kontrollkästchens erklärst Du Dich mit den <bold><termsUrl>Geschäftsbedingungen</termsUrl></bold> und dem <bold><privacyUrl>Datenschutz</privacyUrl></bold> einverstanden.",
         "newsletter": "I agree to receive updates throw newsletter.",
-        "checkoutTitle": "Bezahlung"
+        "checkoutTitle": "Bezahlung",
+        "3ds": "Only payments with 3D Secure enabled cards"
     },
     "error": {
         "general": "Allgemeiner Fehler",

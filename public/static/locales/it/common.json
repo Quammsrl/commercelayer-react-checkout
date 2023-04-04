@@ -10,7 +10,8 @@
         "apply": "Applica",
         "privacy_and_terms": "Accetto i <bold><termsUrl>termini</termsUrl></bold>, le <bold><privacyUrl>condizioni</privacyUrl></bold> e la <bold><returnsUrl>politica di rimborso e di cancellazione</returnsUrl></bold>.",
         "newsletter": "Accetto di ricevere aggiornamenti tramite la newsletter.",
-        "checkoutTitle": "Checkout"
+        "checkoutTitle": "Checkout",
+        "3ds": "Solo pagamenti con carte abilitate 3D Secure"
     },
     "error": {
         "general": "Errore generale",
