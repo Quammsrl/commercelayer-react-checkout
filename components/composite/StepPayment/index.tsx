@@ -121,11 +121,10 @@ export const StepPayment: React.FC = () => {
               </p>
             )}
 
-            <p className="text-sm text-gray-500"><Trans
-              i18nKey="general.3ds"
-            /></p>
+            <p className="text-sm text-gray-500">
+              <Trans i18nKey="general.3ds" />
+            </p>
           </div>
-
         )}
       </StepContent>
     </StepContainer>
