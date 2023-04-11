@@ -72,7 +72,7 @@ export const StepComplete: React.FC<Props> = ({
         ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter)
   }
   process.nextTick(() => redirectBack())
-   ./Update Quamm */
+  ./Update Quamm */
 
   if (!ctx) return null
 
