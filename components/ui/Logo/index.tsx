@@ -19,12 +19,14 @@ export const Logo: React.FC<Props> = ({ logoUrl, companyName, className }) => {
       split = ["https://custom.airness.eu"]
     }
     return (
-      <Image
-        src={logoUrl}
-        alt={companyName}
-        className={`${className} cursor-pointer`}
-        onClick={(e) => handleClick(e, split[0])}
-      />
+      <div>
+        <Image
+          src={logoUrl}
+          alt={companyName}
+          className={`${className} logo-header cursor-pointer`}
+          onClick={(e) => handleClick(e, split[0])}
+        />
+      </div>
     )
   }
   return <Label className={className}>{companyName}</Label>
@@ -35,7 +37,7 @@ const handleClick = (e: any, url: any) => {
 }
 
 const Image = styled.img`
-  ${tw`w-60 max-w-full mb-5 md:mb-10`}
+  ${tw`h-11 w-auto mb-5 md:mb-10`}
 `
 
 const Label = styled.h1`

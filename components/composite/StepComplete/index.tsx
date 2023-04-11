@@ -67,6 +67,7 @@ export const StepComplete: React.FC<Props> = ({
   /* Update Quamm */
   const redirectBack = () => {
     const newsletter = localStorage.getItem("newsletter") === "true"
+
     ctx?.returnUrl &&
       (window.location.href =
         ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter)

@@ -4,11 +4,10 @@ import tw from "twin.macro"
 import { CheckCss } from "components/ui/form/CheckBox"
 import { InputCss } from "components/ui/form/Input"
 
-
 export const StyledItem = styled.div`
   ${tw`relative h-10`}
   @media (max-width: 768px) {
-    &:first-child{
+    &:first-child {
       ${tw`mb-8`}
     }
   }

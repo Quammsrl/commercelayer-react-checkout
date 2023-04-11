@@ -10,8 +10,7 @@ export const Footer: React.FC = () => {
   return (
     <Wrapper>
       <LogoWrapper>
-        P4F S.R.L. | P.IVA 07053660960 | VIA ERBA, 14 - 20095{" "}
-        <br />
+        P4F S.R.L. | P.IVA 07053660960 | VIA ERBA, 14 - 20095 <br />
         CUSANO MILANINO - ITALY
       </LogoWrapper>
     </Wrapper>
