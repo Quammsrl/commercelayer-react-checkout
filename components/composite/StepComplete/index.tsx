@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next"
 // import { PaymentContainer } from "components/composite/StepPayment/PaymentContainer"
 import { AppContext } from "components/data/AppProvider"
 import { Base } from "components/ui/Base"
-// import { Button } from "components/ui/Button"
+import { Button } from "components/ui/Button"
 // import { CustomAddress } from "components/ui/CustomerAddressCard"
 // import { FlexContainer } from "components/ui/FlexContainer"
 // import { Footer } from "components/ui/Footer"
@@ -39,7 +39,7 @@ import {
   Top,
   Text,
   Wrapper,
-  // WrapperButton,
+  WrapperButton,
 } from "./styled"
 // import { SupportMessage } from "./SupportMessage"
 
@@ -64,21 +64,24 @@ export const StepComplete: React.FC<Props> = ({
 
   const ctx = useContext(AppContext)
 
-  /* Update Quamm */
+  /* Update Quamm 
   const redirectBack = () => {
     const newsletter = localStorage.getItem("newsletter") === "true"
-
     ctx?.returnUrl &&
       (window.location.href =
         ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter)
   }
   process.nextTick(() => redirectBack())
-  /* ./Update Quamm */
+   ./Update Quamm */
 
   if (!ctx) return null
 
+  const newsletter = localStorage.getItem("newsletter") === "true"
+
   const handleClick = () => {
-    ctx?.returnUrl && (document.location.href = ctx?.returnUrl)
+    ctx?.returnUrl &&
+      (document.location.href =
+        ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter)
   }
 
   return (
@@ -91,7 +94,18 @@ export const StepComplete: React.FC<Props> = ({
             className="self-center pt-10 pl-4 mb-10 md:self-auto"
           />
           <Main>
-            <Text>{t("stepComplete.titleRedirect")}</Text>
+            {ctx?.returnUrl && (
+              <WrapperButton>
+                <Button
+                  data-testid="button-continue-to-shop"
+                  onClick={handleClick}
+                >
+                  {t("stepComplete.continue")}
+                </Button>
+
+                {""}
+              </WrapperButton>
+            )}
           </Main>
         </Wrapper>
       </Top>
