@@ -88,11 +88,6 @@ export const StepComplete: React.FC<Props> = ({
     <Base>
       <Top>
         <Wrapper>
-          <Logo
-            logoUrl={logoUrl}
-            companyName={companyName}
-            className="self-center pt-10 pl-4 mb-10 md:self-auto"
-          />
           <Main>
             {ctx?.returnUrl && (
               <WrapperButton>
