@@ -54,10 +54,10 @@ interface Props {
 export const StepComplete: React.FC<Props> = ({
   logoUrl,
   companyName,
+  orderNumber
   /*
   supportEmail,
   supportPhone,
-  orderNumber,
   */
 }) => {
   const { t } = useTranslation()
@@ -93,7 +93,7 @@ export const StepComplete: React.FC<Props> = ({
             <p style={{ marginTop: "10px" }}>
               {t("stepComplete.text", {
                 mail: ctx.emailAddress,
-                number: ctx.order.number,
+                number: orderNumber,
               })}
             </p>
             {ctx?.returnUrl && (
