@@ -24,7 +24,7 @@ export const MainHeader: React.FC<Props> = ({ orderNumber }) => {
 }
 
 const Wrapper = styled.div`
-  ${tw`flex flex-row border-t mb-5 px-5 pt-5 -mx-5 md:px-0 md:-mx-0 md:mb-0 md:border-t-0 md:border-b md:pt-0 justify-between md:items-center pb-2`}
+  ${tw`flex flex-row  mb-5 px-5 -mx-5 md:px-0 md:-mx-0 md:mb-0 md:border-t-0 md:border-b md:pt-0 justify-between md:items-center pb-2`}
 `
 const Title = styled.h1`
   ${tw`text-black font-semibold text-xl md:text-3xl`}

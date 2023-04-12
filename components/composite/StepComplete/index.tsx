@@ -54,7 +54,7 @@ interface Props {
 export const StepComplete: React.FC<Props> = ({
   logoUrl,
   companyName,
-  orderNumber
+  orderNumber,
   /*
   supportEmail,
   supportPhone,
@@ -98,12 +98,13 @@ export const StepComplete: React.FC<Props> = ({
             </p>
             {ctx?.returnUrl && (
               <WrapperButton>
-                <Button
+                <button
+                  className="button-airness"
                   data-testid="button-continue-to-shop"
                   onClick={handleClick}
                 >
-                  {t("stepComplete.continue")}
-                </Button>
+                  <span>{t("stepComplete.continue")}</span>
+                </button>
                 {""}
               </WrapperButton>
             )}

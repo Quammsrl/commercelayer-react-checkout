@@ -70,6 +70,7 @@ export const IntegrationBillingInvoice: React.FC = () => {
 
   return (
     <>
+      {billingCountry}
       {billingCountry && billingCountry === "IT" && (
         <StyledWrapper>
           <div className="mt-4">
