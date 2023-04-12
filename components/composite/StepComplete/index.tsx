@@ -64,7 +64,7 @@ export const StepComplete: React.FC<Props> = ({
 
   const ctx = useContext(AppContext)
 
-  /* Update Quamm 
+  /* Update Quamm  */
   const redirectBack = () => {
     const newsletter = localStorage.getItem("newsletter") === "true"
     ctx?.returnUrl &&
@@ -72,35 +72,14 @@ export const StepComplete: React.FC<Props> = ({
         ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter)
   }
   process.nextTick(() => redirectBack())
-  ./Update Quamm */
-
-  if (!ctx) return null
-
-  const newsletter = localStorage.getItem("newsletter") === "true"
-
-  const handleClick = () => {
-    ctx?.returnUrl &&
-      (document.location.href =
-        ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter)
-  }
+  /* ./Update Quamm */
 
   return (
     <Base>
       <Top>
         <Wrapper>
           <Main>
-            {ctx?.returnUrl && (
-              <WrapperButton>
-                <Button
-                  data-testid="button-continue-to-shop"
-                  onClick={handleClick}
-                >
-                  {t("stepComplete.continue")}
-                </Button>
 
-                {""}
-              </WrapperButton>
-            )}
           </Main>
         </Wrapper>
       </Top>
