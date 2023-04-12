@@ -75,14 +75,14 @@ export const StepComplete: React.FC<Props> = ({
   ./Update Quamm */
 
   if (!ctx) return null
+  const newsletter = localStorage.getItem("newsletter") === "true"
+  const url = ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter
 
-  const handleClick = () => {
-    const newsletter = localStorage.getItem("newsletter") === "true"
-
+  /* const handleClick = () => {
     ctx?.returnUrl &&
       (document.location.href =
         ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter)
-  }
+  } */
 
   return (
     <Base>
@@ -98,13 +98,13 @@ export const StepComplete: React.FC<Props> = ({
             </p>
             {ctx?.returnUrl && (
               <WrapperButton>
-                <button
+                <a
                   className="button-airness"
                   data-testid="button-continue-to-shop"
-                  onClick={handleClick}
+                  href={`${url}`}
                 >
                   <span>{t("stepComplete.continue")}</span>
-                </button>
+                </a>
                 {""}
               </WrapperButton>
             )}
