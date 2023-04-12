@@ -136,6 +136,7 @@
         "summary_title": "Zusammenfassung",
         "customer_title": "Kunde",
         "email": "E-Mail:",
-        "free_payment": "Diese Bestellung erforderte keine Zahlung"
+        "free_payment": "Diese Bestellung erforderte keine Zahlung",
+        "text": "Il tuo ordine <strong>{number}</strong> è stato preso in carico. La conferma dell'ordine è stata inviata a <strong>{mail}</strong>. Se l'email non arriva entro 2 minuti, controlla nella posta indesiderata (SPAM)."
     }
 }

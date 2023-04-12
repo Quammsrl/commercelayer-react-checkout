@@ -125,7 +125,7 @@
         "shipping_address_phone": "Téléphone*"
     },
     "stepComplete": {
-        "title": "Commande passée avec succès!",
+        "title": "Votre ordre a été prise en charge!",
         "description": "Il tuo ordine No: <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
         "continue": "Continuer vos achats",
         "titleRedirect": "Redirecting, please wait...",
@@ -138,6 +138,7 @@
         "summary_title": "Résumé",
         "customer_title": "Client",
         "email": "E-mail:",
-        "free_payment": "Cette commande ne nécessite pas de paiement"
+        "free_payment": "Cette commande ne nécessite pas de paiement",
+        "text": "Le numéro d’identification de votre commande est {{number}} et une confirmation de l’ordre a été envoyée à cette email {{mail}}. Si l’email n’arrive pas dans les 2 minutes, veuillez vérifier votre SPAM"
     }
 }

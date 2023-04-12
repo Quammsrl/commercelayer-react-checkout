@@ -125,7 +125,7 @@
         "shipping_address_phone": "Phone*"
     },
     "stepComplete": {
-        "title": "Thank you for your order!",
+        "title": "Your order has been placed!",
         "description": "Order confirmation number: <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
         "continue": "Continue shopping",
         "titleRedirect": "Redirecting, please wait...",
@@ -138,6 +138,7 @@
         "summary_title": "Summary",
         "customer_title": "Customer",
         "email": "E-mail:",
-        "free_payment": "This order did not require a payment"
+        "free_payment": "This order did not require a payment",
+        "text": "Your order number is {{number}} and your confirmation email is being sent to {{mail}}. If the email hasn’t arrived in 2 minutes please check your spam folder to see if it was routed there."
     }
 }
