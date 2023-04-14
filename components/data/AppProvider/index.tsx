@@ -31,6 +31,7 @@ export interface AppProviderData extends FetchOrderByIdResponse {
   saveShipments: () => void
   setMetadata: (metadata: object) => void
   metadata: any
+  fromApp: boolean
   placeOrder: () => Promise<void>
   setPayment: (payment?: PaymentMethod) => void
   selectShipment: (
@@ -47,6 +48,7 @@ export interface AppStateData extends FetchOrderByIdResponse {
   isLoading: boolean
   isFirstLoading: boolean
   metadata: object
+  fromApp: boolean
 }
 
 const initialState: AppStateData = {
@@ -80,6 +82,7 @@ const initialState: AppStateData = {
   taxIncluded: false,
   shippingMethodName: undefined,
   metadata: {},
+  fromApp: false,
 }
 
 export const AppContext = createContext<AppProviderData | null>(null)
@@ -117,6 +120,9 @@ export const AppProvider: React.FC<AppProviderProps> = ({
     }
     dispatch({ type: ActionType.START_LOADING })
     const order = orderRef.current || (await fetchOrder(cl, orderId))
+
+    state.fromApp = order?.metadata?.from_app
+
     const isShipmentRequired = await checkIfShipmentRequired(cl, orderId)
 
     const addressInfos = await checkAndSetDefaultAddressForOrder({
@@ -176,6 +182,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
   }
 
   const setMetadata = (metadata: object): void => {
+    console.log(metadata)
     const merged: any = { ...state.metadata, ...metadata }
     Object.keys(merged).forEach((key: string) => {
       if (!merged[key]) delete merged[key]

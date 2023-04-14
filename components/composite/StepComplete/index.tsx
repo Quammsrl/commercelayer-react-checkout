@@ -64,19 +64,22 @@ export const StepComplete: React.FC<Props> = ({
 
   const ctx = useContext(AppContext)
 
-  /* Update Quamm  
-  const redirectBack = () => {
-    const newsletter = localStorage.getItem("newsletter") === "true"
-    ctx?.returnUrl &&
-      (window.location.href =
-        ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter)
-  }
-  process.nextTick(() => redirectBack())
-  ./Update Quamm */
-
   if (!ctx) return null
+
   const newsletter = localStorage.getItem("newsletter") === "true"
   const url = ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter
+
+  /* Update Quamm  */
+  if (!ctx.fromApp) {
+    const redirectBack = () => {
+      ctx?.returnUrl &&
+        (window.location.href = url)
+    }
+    process.nextTick(() => redirectBack())
+  }
+  /* ./Update Quamm */
+
+
 
   /* const handleClick = () => {
     ctx?.returnUrl &&
