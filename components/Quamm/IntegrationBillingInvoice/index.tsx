@@ -43,10 +43,10 @@ export const IntegrationBillingInvoice: React.FC = () => {
   useEffect(() => {
     if (billingCountry !== "IT") {
       const metaTags = {
-        tipo: "",
-        codice_fiscale: "",
-        ragione_sociale: "",
-        partita_iva: "",
+        tipo: "-",
+        codice_fiscale: "-",
+        ragione_sociale: "-",
+        partita_iva: "-",
       }
       setMetaState(metaTags)
     }
@@ -54,7 +54,7 @@ export const IntegrationBillingInvoice: React.FC = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const metaName = event.target.name
-    const metaValue = event.target.value
+    const metaValue = event.target?.value || "-"
     const metaTags = { [metaName]: metaValue }
 
     setMetaState(metaTags)
