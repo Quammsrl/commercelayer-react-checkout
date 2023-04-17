@@ -182,7 +182,6 @@ export const AppProvider: React.FC<AppProviderProps> = ({
   }
 
   const setMetadata = (metadata: object): void => {
-    console.log(metadata)
     const merged: any = { ...state.metadata, ...metadata }
     Object.keys(merged).forEach((key: string) => {
       if (!merged[key]) delete merged[key]
