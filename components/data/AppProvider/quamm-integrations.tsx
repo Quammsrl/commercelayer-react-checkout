@@ -14,7 +14,6 @@ export const updateOrderMetadataIntegration = async (
 ): Promise<void> => {
   try {
     const url = `https://backend.airness.eu/api/cl/order_meta/${state?.order?.id}`
-
     const res = await axios({
       method: "POST",
       url,
@@ -28,7 +27,6 @@ export const updateOrderMetadataIntegration = async (
         },
       },
     })
-    console.log(res)
   } catch (e) {
     console.log(e)
   }
