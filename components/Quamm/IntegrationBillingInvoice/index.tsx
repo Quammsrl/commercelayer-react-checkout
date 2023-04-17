@@ -24,12 +24,13 @@ export const IntegrationBillingInvoice: React.FC = () => {
   const [billingCountry, setBillingCountry] = useState<string | undefined>(
     appCtx?.billingAddress?.country_code
   )
+  console.log(appCtx)
 
   const [invoiceData, setInvoiceData] = useState({
-    tipo: metadata.tipo || "",
-    codice_fiscale: metadata.codice_fiscale || "",
-    ragione_sociale: metadata.ragione_sociale || "",
-    partita_iva: metadata.partita_iva || "",
+    tipo: metadata.tipo || "-",
+    codice_fiscale: metadata.codice_fiscale || "-",
+    ragione_sociale: metadata.ragione_sociale || "-",
+    partita_iva: metadata.partita_iva || "-",
   })
 
   // Monitoro i cambiamenti della select country
@@ -43,10 +44,10 @@ export const IntegrationBillingInvoice: React.FC = () => {
   useEffect(() => {
     if (billingCountry !== "IT") {
       const metaTags = {
-        tipo: "",
-        codice_fiscale: "",
-        ragione_sociale: "",
-        partita_iva: "",
+        tipo: "-",
+        codice_fiscale: "-",
+        ragione_sociale: "-",
+        partita_iva: "-",
       }
       setMetaState(metaTags)
     }
@@ -54,7 +55,8 @@ export const IntegrationBillingInvoice: React.FC = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const metaName = event.target.name
-    const metaValue = event.target.value
+
+    const metaValue = event.target?.value || "-"
     const metaTags = { [metaName]: metaValue }
 
     setMetaState(metaTags)
