@@ -121,7 +121,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({
     dispatch({ type: ActionType.START_LOADING })
     const order = orderRef.current || (await fetchOrder(cl, orderId))
 
-    state.fromApp = order?.metadata?.from_app
+    if (order?.metadata?.fromApp) {
+      const value = order?.metadata?.fromApp.toString()
+      localStorage.setItem("fromApp", value)
+    }
 
     const isShipmentRequired = await checkIfShipmentRequired(cl, orderId)
 

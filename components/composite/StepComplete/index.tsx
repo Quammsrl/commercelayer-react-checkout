@@ -70,7 +70,7 @@ export const StepComplete: React.FC<Props> = ({
   const url = ctx?.returnUrl + "?id=" + ctx.orderId + "&nl=" + newsletter
 
   /* Update Quamm  */
-  if (!ctx.fromApp) {
+  if (localStorage.getItem("fromApp") !== "true") {
     const redirectBack = () => {
       ctx?.returnUrl &&
         (window.location.href = url)
