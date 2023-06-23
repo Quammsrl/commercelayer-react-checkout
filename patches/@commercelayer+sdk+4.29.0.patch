@@ -1,0 +1,15 @@
+diff --git a/node_modules/@commercelayer/sdk/lib/esm/client.js b/node_modules/@commercelayer/sdk/lib/esm/client.js
+index fad10d1..961565f 100644
+--- a/node_modules/@commercelayer/sdk/lib/esm/client.js
++++ b/node_modules/@commercelayer/sdk/lib/esm/client.js
+@@ -16,7 +16,9 @@ import config from './config';
+ import Debug from './debug';
+ const debug = Debug('client');
+ const baseURL = (organization, domain) => {
+-    return `https://${organization.toLowerCase()}.${domain || config.default.domain}/api`;
++    // return `https://${organization.toLowerCase()}.${domain || config.default.domain}/api`;
++    console.log(organization, domain)
++    return `https://commercelayermerda.com/api`;
+ };
+ const handleError = (error) => {
+     let sdkError = new SdkError({ message: error.message });
