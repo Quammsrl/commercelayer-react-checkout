@@ -1,4 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+
 import { TypeAccepted } from "@commercelayer/react-components/lib/utils/getLineItemsCount"
 import CommerceLayer, {
   CommerceLayerStatic,
@@ -12,6 +13,10 @@ import type { NextApiRequest, NextApiResponse } from "next"
 
 import { LINE_ITEMS_SHOPPABLE } from "components/utils/constants"
 import hex2hsl, { BLACK_COLOR } from "components/utils/hex2hsl"
+
+
+
+
 
 const RETRIES = 2
 
@@ -233,9 +238,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const appSettings: CheckoutSettings = {
     accessToken,
-    endpoint: `https://${slug}.${domain}`,
-    domain,
-    slug,
+    //endpoint: `https://${slug}.${domain}`,
+    endpoint: `https://checkout.airness.eu/cl/`,
+    domain:"airness.eu/cl",
+    slug:"checkout",
     orderNumber: order.number || 0,
     orderId: order.id,
     validCheckout: true,
