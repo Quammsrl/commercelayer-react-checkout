@@ -103,7 +103,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
 }) => {
   const orderRef = useRef<Order>()
   const [state, dispatch] = useReducer(reducer, initialState)
-
+  console.log(CommerceLayer)
   const cl = CommerceLayer({
     organization: slug,
     accessToken: accessToken,

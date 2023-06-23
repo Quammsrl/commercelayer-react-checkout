@@ -1,5 +1,5 @@
-import { useTranslation } from "next-i18next"
 import Link from "next/link"
+import { useTranslation } from "next-i18next"
 
 import { CartLinkWrapper, LinkWrapper } from "./styled"
 

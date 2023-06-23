@@ -134,7 +134,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const accessToken = req.query.accessToken as string
   const orderId = req.query.orderId as string
 
-  const domain = DOMAIN || "commercelayer.io"
+  const domain = "airness.eu"
+  const slug = "checkout"
 
   const paymentReturn = req.query.paymentReturn === "true"
 
@@ -153,7 +154,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const subdomain = req.headers.host?.split(":")[0].split(".")[0]
 
-  const { slug, kind, isTest } = getTokenInfo(accessToken)
+  const { kind, isTest } = getTokenInfo(accessToken)
 
   if (!slug) {
     return invalidateCheckout()
