@@ -72,14 +72,11 @@ export const StepComplete: React.FC<Props> = ({
   /* Update Quamm  */
   if (localStorage.getItem("fromApp") !== "true") {
     const redirectBack = () => {
-      ctx?.returnUrl &&
-        (window.location.href = url)
+      ctx?.returnUrl && (window.location.href = url)
     }
     process.nextTick(() => redirectBack())
   }
   /* ./Update Quamm */
-
-
 
   /* const handleClick = () => {
     ctx?.returnUrl &&

@@ -25,7 +25,6 @@ const Home: NextPage = () => {
   useEffect(() => {
     localStorage.setItem("newsletter", "false")
     localStorage.setItem("fromApp", "false")
-
   }, [])
 
   const { settings, retryOnError, isLoading } = useSettingsOrInvalid()

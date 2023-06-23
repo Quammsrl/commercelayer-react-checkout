@@ -14,10 +14,6 @@ import type { NextApiRequest, NextApiResponse } from "next"
 import { LINE_ITEMS_SHOPPABLE } from "components/utils/constants"
 import hex2hsl, { BLACK_COLOR } from "components/utils/hex2hsl"
 
-
-
-
-
 const RETRIES = 2
 
 interface JWTProps {
@@ -238,10 +234,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const appSettings: CheckoutSettings = {
     accessToken,
-    //endpoint: `https://${slug}.${domain}`,
-    endpoint: `https://checkout.airness.eu/cl/`,
-    domain:"airness.eu/cl",
-    slug:"checkout",
+    // endpoint: `https://${slug}.${domain}`,
+    endpoint: process.env.ENDPOINT || "https://checkout-22.airness.eu/cl/",
+    domain: process.env.BASE_URL || "airness.eu/cl",
+    slug: process.env.SLUG || "checkout-22",
     orderNumber: order.number || 0,
     orderId: order.id,
     validCheckout: true,
