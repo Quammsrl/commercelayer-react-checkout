@@ -115,6 +115,7 @@
         "shipping_address_first_name": "First name*",
         "shipping_address_last_name": "Last name*",
         "shipping_address_line_1": "Address line 1*",
+        "shipping_address_line_1_alert": "Ensure you provide a complete address, <strong>inclusive of the house number</strong>. Omitting this detail could hinder the proper delivery of your items.",
         "shipping_address_line_2": "Address line 2",
         "shipping_address_city": "City*",
         "shipping_address_country_code": "Country/Region*",

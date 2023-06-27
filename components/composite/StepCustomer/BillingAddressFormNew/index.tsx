@@ -46,6 +46,7 @@ export const BillingAddressFormNew: React.FC<Props> = ({
         type="text"
         value={billingAddress?.line_1 || ""}
       />
+
       <AddressInputGroup
         fieldName="billing_address_line_2"
         resource="billing_address"

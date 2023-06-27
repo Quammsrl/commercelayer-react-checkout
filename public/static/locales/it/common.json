@@ -115,6 +115,7 @@
         "shipping_address_first_name": "Nome*",
         "shipping_address_last_name": "Cognome*",
         "shipping_address_line_1": "Indirizzo*",
+        "shipping_address_line_1_alert": "Assicurati di inserire l'indirizzo completo, <strong>inclusivo del numero civico</strong>. L'omissione di quest'ultimo potrebbe compromettere la corretta consegna della merce.",
         "shipping_address_line_2": "Presso",
         "shipping_address_city": "Città*",
         "shipping_address_country_code": "Paese*",
