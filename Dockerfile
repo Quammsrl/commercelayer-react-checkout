@@ -5,6 +5,7 @@ COPY package*.json ./
 
 RUN npm install
 COPY ./ .
+COPY .env.europe .env
 
 FROM dev-stage AS build-stage
 RUN  npm run build
