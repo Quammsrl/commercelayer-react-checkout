@@ -11,7 +11,7 @@ import {
   BaseInputType,
 } from "@commercelayer/react-components"
 import { ChangeEvent, useContext, useEffect, useState } from "react"
-import { useTranslation } from "react-i18next"
+import { useTranslation, Trans } from "react-i18next"
 import styled from "styled-components"
 import tw from "twin.macro"
 
@@ -151,13 +151,13 @@ export const AddressInputGroup: React.FC<Props> = ({
             onChange={handleChange}
             value={
               shippingCountryCodeLock &&
-              fieldName === "shipping_address_country_code"
+                fieldName === "shipping_address_country_code"
                 ? shippingCountryCodeLock
                 : value
             }
             disabled={Boolean(
               shippingCountryCodeLock &&
-                fieldName === "shipping_address_country_code"
+              fieldName === "shipping_address_country_code"
             )}
           />
           <Label htmlFor={fieldName}>{label}</Label>
@@ -190,6 +190,12 @@ export const AddressInputGroup: React.FC<Props> = ({
             className="form-input"
           />
           <Label htmlFor={fieldName}>{label}</Label>
+          {fieldName.includes('address_line_1') && (
+            <p className="text-xs text-gray-500 mt-2">
+              <Trans i18nKey="addressForm.shipping_address_line_1_alert" />
+
+            </p>
+          )}
         </>
       )
     }
@@ -198,7 +204,7 @@ export const AddressInputGroup: React.FC<Props> = ({
   return (
     <div className="mb-8">
       <Wrapper>
-        <div className="relative h-10">{renderInput()}</div>
+        <div className="relative">{renderInput()}</div>
       </Wrapper>
       <StyledErrors
         data-test-id={`error_${fieldName}`}
