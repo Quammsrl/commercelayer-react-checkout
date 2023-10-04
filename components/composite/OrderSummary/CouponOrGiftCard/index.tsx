@@ -5,7 +5,7 @@ import {
   ErrorComponentProps,
 } from "@commercelayer/react-components"
 import { useState } from "react"
-import { useTranslation } from "react-i18next"
+import { Trans, useTranslation } from "react-i18next"
 
 import {
   CouponFormWrapper,
@@ -96,6 +96,9 @@ export const CouponOrGiftCard: React.FC<Props> = ({
                 className={`w-auto -ml-px relative inline-flex items-center space-x-2 px-8 py-3 text-xs font-extrabold text-contrast bg-primary border border-transparent rounded-r-md hover:opacity-80 focus:outline-none`}
               />
             </CouponFieldWrapper>
+            <p className="text-sm text-gray-500" style={{ marginTop: "1rem" }}>
+              <Trans i18nKey="general.couponAlert" />
+            </p>
             <StyledErrors
               data-test-id="discount-error"
               resource="orders"

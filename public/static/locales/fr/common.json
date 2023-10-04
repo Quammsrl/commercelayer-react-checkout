@@ -11,7 +11,8 @@
         "privacy_and_terms": "J'accepte les <bold><termsUrl>conditions de vente</termsUrl></bold>, le <bold><privacyUrl>politique de confidentialité</privacyUrl></bold> et le <bold><returnsUrl>politique de remboursement et d'annulation</returnsUrl></bold>.",
         "newsletter": "J'accepte de recevoir des mises à jour via la newsletter.",
         "checkoutTitle": "Checkout",
-        "3ds": "Uniquement les paiements avec des cartes compatibles 3D Secure"
+        "3ds": "Uniquement les paiements avec des cartes compatibles 3D Secure",
+        "couponAlert": "Attention : les coupons de réduction ne sont pas valables sur les produits déjà en promotion ou exclus des promotions."
     },
     "error": {
         "general": "Erreur générale",
