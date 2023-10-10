@@ -1,0 +1,41 @@
+# Deploy Digital Ocean
+name: Staging
+on:
+  push:
+    branches:
+      - staging
+concurrency: build
+jobs:
+  staging-deploy:
+    runs-on: self-hosted
+    timeout-minutes: 30
+    steps:
+      - name: Build
+        uses: appleboy/ssh-action@master
+        with:
+          command_timeout: 30m
+          host: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSHKEY }}
+          script_stop: true
+          script: |
+            cd /opt/checkout/staging/
+            git fetch --all --force
+            git checkout staging
+            git reset --hard origin/staging
+            cp /opt/checkout/staging/.env.staging /opt/checkout/staging/.env
+            docker build -t dr.quammbase.it/airness-checkout-staging:latest .
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSHKEY }}
+          script_stop: true
+          script: |
+            docker stop airness-checkout-staging || true
+            docker rm airness-checkout-staging || true
+            docker run -p 3011:3000 --name airness-checkout-staging -d --restart unless-stopped airness-checkout-staging:latest
+
